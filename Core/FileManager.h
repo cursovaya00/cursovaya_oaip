@@ -15,9 +15,9 @@ public:
 			StreamWriter^ sw = gcnew StreamWriter(filePath, false, System::Text::Encoding::UTF8);
 			sw->WriteLine("Graph Data");
 			sw->WriteLine("[VERTICES]");
-			for each(String ^ vertex in vertexLines) sw->WriteLine(vertex);
+			for each (String ^ vertex in vertexLines) sw->WriteLine(vertex);
 			sw->WriteLine("[EDGES]");
-			for each(String ^ edge in edgeLines) sw->WriteLine(edge);
+			for each (String ^ edge in edgeLines) sw->WriteLine(edge);
 			sw->Close();
 			return true;
 		}
@@ -82,6 +82,41 @@ public:
 		}
 	}
 	static bool LoadFromBIN(String^ filePath, List<String^>^% vertexData, List<String^>^% edgeData) {
-
+		try {
+			vertexData = gcnew List<String^>();
+			edgeData = gcnew List<String^>();
+			IntPtr p = Marshal::StringToHGlobalAnsi(filePath);
+			const char* cstr = static_cast<const char*>(p.ToPointer());
+			ifstream fin(cstr, ios::binary);
+			if (!fin.is_open()) { Marshal::FreeHGlobal(p); return false; }
+			int vCount = 0;
+			fin.read((char*)&vCount, sizeof(vCount));
+			for (int i = 0; i < vCount; i++) {
+				int len = 0;
+				fin.read((char*)&len, sizeof(len));
+				char* buf = new char[len + 1];
+				fin.read(buf, len);
+				buf[len] = '\0';
+				String^ str = gcnew String(buf);
+				delete[] buf;
+				vertexData->Add(str);
+			}
+			int eCount = 0;
+			fin.read((char*)&eCount, sizeof(eCount));
+			for (int i = 0; i < eCount; i++) {
+				int len = 0;
+				fin.read((char*)&len, sizeof(len));
+				char* buf = new char[len + 1];
+				fin.read(buf, len);
+				buf[len] = '\0';
+				String^ str = gcnew String(buf);
+				delete[] buf;
+				edgeData->Add(str);
+			}
+			fin.close();
+			Marshal::FreeHGlobal(p);
+			return true;
+		}
+		catch (Exception^) { return false; }
 	}
 };
