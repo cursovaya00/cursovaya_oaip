@@ -22,7 +22,6 @@ namespace curs {
 		int FromIndex, ToIndex;
 		Edge(int fromInd, int toInd) : FromIndex(fromInd), ToIndex(toInd) {}
 		String^ ToString() override { return "V" + (FromIndex + 1).ToString() + " - V" + (ToIndex + 1).ToString(); }
-
 	};
 
 	public ref class Graph {
@@ -62,21 +61,18 @@ namespace curs {
 				else {
 					if (Edges[i]->FromIndex > index) Edges[i]->FromIndex--;
 					if (Edges[i]->ToIndex > index) Edges[i]->ToIndex--;
-
 				}
 			}
 			return true;
 		}
-
 		void ClearVisited() {
 			for (int i = 0;i < Vertices->Count;i++) {
 				Vertices[i]->IsVisited = 0;
 			}
 		}
-
 		List<int>^ DFS(int startIND) {
 			List<int>^ result = gcnew List<int>();
-			if (startIND < 0 || startIND >= Vertices->Count) return result;
+			if (startIND < 0 || startIND >= Vertices->Count) { return result; }
 			ClearVisited();
 			DFSRecursive(startIND, result);
 			return result;

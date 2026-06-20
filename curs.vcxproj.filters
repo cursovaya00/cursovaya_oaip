@@ -31,12 +31,18 @@
       <Filter>Forms</Filter>
     </ClInclude>
     <ClInclude Include="MyForm.h" />
+    <ClInclude Include="LoginForm.h">
+      <Filter>Forms</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="HelpForm.cpp">
       <Filter>Forms</Filter>
     </ClCompile>
     <ClCompile Include="MyForm.cpp" />
+    <ClCompile Include="LoginForm.cpp">
+      <Filter>Forms</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MyForm.resx">

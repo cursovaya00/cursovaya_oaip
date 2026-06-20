@@ -10,12 +10,12 @@ namespace curs {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Сводка для MyForm
+	/// Сводка для LoginForm
 	/// </summary>
-	public ref class MyForm : public System::Windows::Forms::Form
+	public ref class LoginForm : public System::Windows::Forms::Form
 	{
 	public:
-		MyForm(void)
+		LoginForm(void)
 		{
 			InitializeComponent();
 			//
@@ -27,7 +27,7 @@ namespace curs {
 		/// <summary>
 		/// Освободить все используемые ресурсы.
 		/// </summary>
-		~MyForm()
+		~LoginForm()
 		{
 			if (components)
 			{
@@ -39,7 +39,7 @@ namespace curs {
 		/// <summary>
 		/// Обязательная переменная конструктора.
 		/// </summary>
-		System::ComponentModel::Container^ components;
+		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -50,18 +50,19 @@ namespace curs {
 		{
 			this->SuspendLayout();
 			// 
-			// MyForm
+			// LoginForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->BackColor = System::Drawing::Color::Black;
-			this->ClientSize = System::Drawing::Size(700, 595);
-			this->ForeColor = System::Drawing::Color::White;
-			this->Name = L"MyForm";
-			this->Text = L"MyForm";
+			this->ClientSize = System::Drawing::Size(348, 340);
+			this->Name = L"LoginForm";
+			this->Text = L"LoginForm";
+			this->Load += gcnew System::EventHandler(this, &LoginForm::LoginForm_Load);
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
+	private: System::Void LoginForm_Load(System::Object^ sender, System::EventArgs^ e) {
+	}
 	};
 }
