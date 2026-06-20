@@ -6,7 +6,7 @@ using namespace System;
 using namespace System::IO;
 using namespace System::Collections::Generic;
 using namespace System::Runtime::InteropServices;
-using namespace std;
+
 
 public ref class FileManager {
 public:
@@ -51,7 +51,7 @@ public:
 		try {
 			IntPtr p = Marshal::StringToHGlobalAnsi(filePath);
 			const char* cstr = static_cast<const char*>(p.ToPointer());
-			ofstream fout(cstr, ios::binary);
+			std::ofstream fout(cstr, std::ios::binary);
 			if (!fout.is_open()) { Marshal::FreeHGlobal(p); return false; }
 			int vCount = vertexData->Count;
 			fout.write((char*)&vCount, sizeof(vCount));
@@ -85,9 +85,9 @@ public:
 		try {
 			vertexData = gcnew List<String^>();
 			edgeData = gcnew List<String^>();
-			IntPtr p = Marshal::StringToHGlobalAnsi(filePath);// конвертирует String^ в char* (файловые потоки работают ток с char)
-			const char* cstr = static_cast<const char*>(p.ToPointer());// IntPtr это не указатель поэтому нужен тупоинтер
-			ifstream fin(cstr, ios::binary);
+			IntPtr p = Marshal::StringToHGlobalAnsi(filePath);// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ String^ пїЅ char* (пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅ char)
+			const char* cstr = static_cast<const char*>(p.ToPointer());// IntPtr пїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+			std::ifstream fin(cstr, std::ios::binary);
 			if (!fin.is_open()) { Marshal::FreeHGlobal(p); return false; }
 			int vCount = 0;
 			fin.read((char*)&vCount, sizeof(vCount));
@@ -114,7 +114,7 @@ public:
 				edgeData->Add(str);
 			}
 			fin.close();
-			Marshal::FreeHGlobal(p);//после работы с char очищаем память
+			Marshal::FreeHGlobal(p);//пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ char пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 			return true;
 		}
 		catch (Exception^) { return false; }

@@ -117,6 +117,37 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="textBox1.Text" xml:space="preserve">
+    <value>Программа для анализа графов с использованием обхода в глубину (DFS).
+
+Возможности:
+Добавление вершин с указанием имени и координат
+Добавление рёбер между вершинами
+Удаление вершин
+Обход графа в глубину (DFS)
+Подсчёт компонент связности
+Сохранение и загрузка графа (TXT, BIN)
+Смена языка: русский, английский, белорусский
+Смена темы: светлая, тёмная, голубая
+
+Как пользоваться:
+1. Добавьте вершины, указав имя и координаты X, Y
+2. Соедините вершины рёбрами, указав индексы начальной и конечной вершины
+3. Выберите стартовую вершину для обхода
+4. Нажмите "Запустить DFS" для запуска обхода
+5. Результаты отобразятся в списке результатов
+
+Файлы:
+TXT — текстовый формат
+BIN — бинарный формат
+
+Языки:
+Русский
+English
+Беларуская
+
+Разработчик: Вербовский Иван Александрович </value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
