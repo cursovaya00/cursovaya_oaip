@@ -3,6 +3,7 @@
 #include "Core/FileManager.h"
 #include "Services/Localization.h"
 #include "Services/UserManager.h"
+#include "HelpForm.h"
 
 namespace curs {
 
@@ -13,25 +14,18 @@ namespace curs {
 	using namespace System::Data;
 	using namespace System::Drawing;
 
-	/// <summary>
-	/// Ñâîäêà äëÿ MyForm
-	/// </summary>
 	public ref class MyForm : public System::Windows::Forms::Form
 	{
 	public:
 		MyForm(void)
 		{
-			InitializeComponent();
+			Localization::Initialize();
 			graph = gcnew Graph();
-			//
-			//TODO: äîáàâüòå êîä êîíñòğóêòîğà
-			//
+			InitializeComponent();
+			ApplyLocalization();
 		}
 
 	protected:
-		/// <summary>
-		/// Îñâîáîäèòü âñå èñïîëüçóåìûå ğåñóğñû.
-		/// </summary>
 		~MyForm()
 		{
 			if (components)
@@ -39,233 +33,210 @@ namespace curs {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::MenuStrip^ menuStrip1;
-	private: System::Windows::Forms::ToolStripMenuItem^ ôàéëToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ ñîõğàíèòüÊàêTXTToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ ñîõğàíèòüÊàêBINToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ çàãğóçèòüÈçTXTToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ çàãğóçèòüÈçBINToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ ÿçûêToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ ğóññêèéToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ englishToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ áåëîğóññêèéToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ âèäToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ ñâåòëàÿÒåìàToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ ò¸ìíàÿÒåìàToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ ãîëóáàÿÒåìàToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ ñïğàâêàToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ îÏğîãğàììåToolStripMenuItem;
-	protected:
 
 	private:
+		System::Windows::Forms::MenuStrip^ menuStrip1;
+		System::Windows::Forms::ToolStripMenuItem^ miFile;
+		System::Windows::Forms::ToolStripMenuItem^ miSaveTxt;
+		System::Windows::Forms::ToolStripMenuItem^ miSaveBin;
+		System::Windows::Forms::ToolStripMenuItem^ miLoadTxt;
+		System::Windows::Forms::ToolStripMenuItem^ miLoadBin;
+		System::Windows::Forms::ToolStripMenuItem^ miLanguage;
+		System::Windows::Forms::ToolStripMenuItem^ miLangRu;
+		System::Windows::Forms::ToolStripMenuItem^ miLangEn;
+		System::Windows::Forms::ToolStripMenuItem^ miLangBe;
+		System::Windows::Forms::ToolStripMenuItem^ miView;
+		System::Windows::Forms::ToolStripMenuItem^ miColor1;
+		System::Windows::Forms::ToolStripMenuItem^ miColor2;
+		System::Windows::Forms::ToolStripMenuItem^ miColor3;
+		System::Windows::Forms::ToolStripMenuItem^ miHelp;
+		System::Windows::Forms::ToolStripMenuItem^ miAbout;
 		Graph^ graph;
-		/// <summary>
-		/// Îáÿçàòåëüíàÿ ïåğåìåííàÿ êîíñòğóêòîğà.
-		/// </summary>
 		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
-		/// <summary>
-		/// Òğåáóåìûé ìåòîä äëÿ ïîääåğæêè êîíñòğóêòîğà — íå èçìåíÿéòå 
-		/// ñîäåğæèìîå ıòîãî ìåòîäà ñ ïîìîùüş ğåäàêòîğà êîäà.
-		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
-			this->ôàéëToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->ñîõğàíèòüÊàêTXTToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->ñîõğàíèòüÊàêBINToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->çàãğóçèòüÈçTXTToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->çàãğóçèòüÈçBINToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->ÿçûêToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->ğóññêèéToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->englishToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->áåëîğóññêèéToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->âèäToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->ñâåòëàÿÒåìàToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->ò¸ìíàÿÒåìàToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->ãîëóáàÿÒåìàToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->ñïğàâêàToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->îÏğîãğàììåToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->miFile = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->miSaveTxt = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->miSaveBin = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->miLoadTxt = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->miLoadBin = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->miLanguage = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->miLangRu = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->miLangEn = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->miLangBe = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->miView = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->miColor1 = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->miColor2 = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->miColor3 = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->miHelp = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->miAbout = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->menuStrip1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// menuStrip1
 			// 
 			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {
-				this->ôàéëToolStripMenuItem,
-					this->ÿçûêToolStripMenuItem, this->âèäToolStripMenuItem, this->ñïğàâêàToolStripMenuItem
+				this->miFile, this->miLanguage,
+					this->miView, this->miHelp
 			});
-			this->menuStrip1->Location = System::Drawing::Point(0, 0);
+			resources->ApplyResources(this->menuStrip1, L"menuStrip1");
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(554, 24);
-			this->menuStrip1->TabIndex = 0;
-			this->menuStrip1->Text = L"menuStrip1";
 			// 
-			// ôàéëToolStripMenuItem
+			// miFile
 			// 
-			this->ôàéëToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {
-				this->ñîõğàíèòüÊàêTXTToolStripMenuItem,
-					this->ñîõğàíèòüÊàêBINToolStripMenuItem, this->çàãğóçèòüÈçTXTToolStripMenuItem, this->çàãğóçèòüÈçBINToolStripMenuItem
+			this->miFile->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {
+				this->miSaveTxt, this->miSaveBin,
+					this->miLoadTxt, this->miLoadBin
 			});
-			this->ôàéëToolStripMenuItem->Name = L"ôàéëToolStripMenuItem";
-			this->ôàéëToolStripMenuItem->Size = System::Drawing::Size(48, 20);
-			this->ôàéëToolStripMenuItem->Text = L"Ôàéë";
+			this->miFile->Name = L"miFile";
+			resources->ApplyResources(this->miFile, L"miFile");
 			// 
-			// ñîõğàíèòüÊàêTXTToolStripMenuItem
+			// miSaveTxt
 			// 
-			this->ñîõğàíèòüÊàêTXTToolStripMenuItem->Name = L"ñîõğàíèòüÊàêTXTToolStripMenuItem";
-			this->ñîõğàíèòüÊàêTXTToolStripMenuItem->Size = System::Drawing::Size(180, 22);
-			this->ñîõğàíèòüÊàêTXTToolStripMenuItem->Text = L"Ñîõğàíèòü êàê TXT";
-			this->ñîõğàíèòüÊàêTXTToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::ñîõğàíèòüÊàêTXTToolStripMenuItem_Click);
+			this->miSaveTxt->Name = L"miSaveTxt";
+			resources->ApplyResources(this->miSaveTxt, L"miSaveTxt");
+			this->miSaveTxt->Click += gcnew System::EventHandler(this, &MyForm::miSaveTxt_Click);
 			// 
-			// ñîõğàíèòüÊàêBINToolStripMenuItem
+			// miSaveBin
 			// 
-			this->ñîõğàíèòüÊàêBINToolStripMenuItem->Name = L"ñîõğàíèòüÊàêBINToolStripMenuItem";
-			this->ñîõğàíèòüÊàêBINToolStripMenuItem->Size = System::Drawing::Size(180, 22);
-			this->ñîõğàíèòüÊàêBINToolStripMenuItem->Text = L"Ñîõğàíèòü êàê BIN";
-			this->ñîõğàíèòüÊàêBINToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::ñîõğàíèòüÊàêBINToolStripMenuItem_Click);
+			this->miSaveBin->Name = L"miSaveBin";
+			resources->ApplyResources(this->miSaveBin, L"miSaveBin");
+			this->miSaveBin->Click += gcnew System::EventHandler(this, &MyForm::miSaveBin_Click);
 			// 
-			// çàãğóçèòüÈçTXTToolStripMenuItem
+			// miLoadTxt
 			// 
-			this->çàãğóçèòüÈçTXTToolStripMenuItem->Name = L"çàãğóçèòüÈçTXTToolStripMenuItem";
-			this->çàãğóçèòüÈçTXTToolStripMenuItem->Size = System::Drawing::Size(180, 22);
-			this->çàãğóçèòüÈçTXTToolStripMenuItem->Text = L"Çàãğóçèòü èç TXT";
-			this->çàãğóçèòüÈçTXTToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::çàãğóçèòüÈçTXTToolStripMenuItem_Click);
+			this->miLoadTxt->Name = L"miLoadTxt";
+			resources->ApplyResources(this->miLoadTxt, L"miLoadTxt");
+			this->miLoadTxt->Click += gcnew System::EventHandler(this, &MyForm::miLoadTxt_Click);
 			// 
-			// çàãğóçèòüÈçBINToolStripMenuItem
+			// miLoadBin
 			// 
-			this->çàãğóçèòüÈçBINToolStripMenuItem->Name = L"çàãğóçèòüÈçBINToolStripMenuItem";
-			this->çàãğóçèòüÈçBINToolStripMenuItem->Size = System::Drawing::Size(180, 22);
-			this->çàãğóçèòüÈçBINToolStripMenuItem->Text = L"Çàãğóçèòü èç BIN";
-			this->çàãğóçèòüÈçBINToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::çàãğóçèòüÈçBINToolStripMenuItem_Click);
+			this->miLoadBin->Name = L"miLoadBin";
+			resources->ApplyResources(this->miLoadBin, L"miLoadBin");
+			this->miLoadBin->Click += gcnew System::EventHandler(this, &MyForm::miLoadBin_Click);
 			// 
-			// ÿçûêToolStripMenuItem
+			// miLanguage
 			// 
-			this->ÿçûêToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
-				this->ğóññêèéToolStripMenuItem,
-					this->englishToolStripMenuItem, this->áåëîğóññêèéToolStripMenuItem
+			this->miLanguage->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
+				this->miLangRu,
+					this->miLangEn, this->miLangBe
 			});
-			this->ÿçûêToolStripMenuItem->Name = L"ÿçûêToolStripMenuItem";
-			this->ÿçûêToolStripMenuItem->Size = System::Drawing::Size(46, 20);
-			this->ÿçûêToolStripMenuItem->Text = L"ßçûê";
+			this->miLanguage->Name = L"miLanguage";
+			resources->ApplyResources(this->miLanguage, L"miLanguage");
 			// 
-			// ğóññêèéToolStripMenuItem
+			// miLangRu
 			// 
-			this->ğóññêèéToolStripMenuItem->Name = L"ğóññêèéToolStripMenuItem";
-			this->ğóññêèéToolStripMenuItem->Size = System::Drawing::Size(180, 22);
-			this->ğóññêèéToolStripMenuItem->Text = L"Ğóññêèé";
-			this->ğóññêèéToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::ğóññêèéToolStripMenuItem_Click);
+			this->miLangRu->Name = L"miLangRu";
+			resources->ApplyResources(this->miLangRu, L"miLangRu");
+			this->miLangRu->Click += gcnew System::EventHandler(this, &MyForm::miLangRu_Click);
 			// 
-			// englishToolStripMenuItem
+			// miLangEn
 			// 
-			this->englishToolStripMenuItem->Name = L"englishToolStripMenuItem";
-			this->englishToolStripMenuItem->Size = System::Drawing::Size(180, 22);
-			this->englishToolStripMenuItem->Text = L"English";
-			this->englishToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::englishToolStripMenuItem_Click);
+			this->miLangEn->Name = L"miLangEn";
+			resources->ApplyResources(this->miLangEn, L"miLangEn");
+			this->miLangEn->Click += gcnew System::EventHandler(this, &MyForm::miLangEn_Click);
 			// 
-			// áåëîğóññêèéToolStripMenuItem
+			// miLangBe
 			// 
-			this->áåëîğóññêèéToolStripMenuItem->Name = L"áåëîğóññêèéToolStripMenuItem";
-			this->áåëîğóññêèéToolStripMenuItem->Size = System::Drawing::Size(180, 22);
-			this->áåëîğóññêèéToolStripMenuItem->Text = L"Áåëîğóññêèé";
-			this->áåëîğóññêèéToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::áåëîğóññêèéToolStripMenuItem_Click);
+			this->miLangBe->Name = L"miLangBe";
+			resources->ApplyResources(this->miLangBe, L"miLangBe");
+			this->miLangBe->Click += gcnew System::EventHandler(this, &MyForm::miLangBe_Click);
 			// 
-			// âèäToolStripMenuItem
+			// miView
 			// 
-			this->âèäToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
-				this->ñâåòëàÿÒåìàToolStripMenuItem,
-					this->ò¸ìíàÿÒåìàToolStripMenuItem, this->ãîëóáàÿÒåìàToolStripMenuItem
+			this->miView->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
+				this->miColor1, this->miColor2,
+					this->miColor3
 			});
-			this->âèäToolStripMenuItem->Name = L"âèäToolStripMenuItem";
-			this->âèäToolStripMenuItem->Size = System::Drawing::Size(39, 20);
-			this->âèäToolStripMenuItem->Text = L"Âèä";
+			this->miView->Name = L"miView";
+			resources->ApplyResources(this->miView, L"miView");
 			// 
-			// ñâåòëàÿÒåìàToolStripMenuItem
+			// miColor1
 			// 
-			this->ñâåòëàÿÒåìàToolStripMenuItem->Name = L"ñâåòëàÿÒåìàToolStripMenuItem";
-			this->ñâåòëàÿÒåìàToolStripMenuItem->Size = System::Drawing::Size(180, 22);
-			this->ñâåòëàÿÒåìàToolStripMenuItem->Text = L"Ñâåòëàÿ òåìà";
-			this->ñâåòëàÿÒåìàToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::ñâåòëàÿÒåìàToolStripMenuItem_Click);
+			this->miColor1->Name = L"miColor1";
+			resources->ApplyResources(this->miColor1, L"miColor1");
+			this->miColor1->Click += gcnew System::EventHandler(this, &MyForm::miColor1_Click);
 			// 
-			// ò¸ìíàÿÒåìàToolStripMenuItem
+			// miColor2
 			// 
-			this->ò¸ìíàÿÒåìàToolStripMenuItem->Name = L"ò¸ìíàÿÒåìàToolStripMenuItem";
-			this->ò¸ìíàÿÒåìàToolStripMenuItem->Size = System::Drawing::Size(180, 22);
-			this->ò¸ìíàÿÒåìàToolStripMenuItem->Text = L"Ò¸ìíàÿ òåìà";
-			this->ò¸ìíàÿÒåìàToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::ò¸ìíàÿÒåìàToolStripMenuItem_Click);
+			this->miColor2->Name = L"miColor2";
+			resources->ApplyResources(this->miColor2, L"miColor2");
+			this->miColor2->Click += gcnew System::EventHandler(this, &MyForm::miColor2_Click);
 			// 
-			// ãîëóáàÿÒåìàToolStripMenuItem
+			// miColor3
 			// 
-			this->ãîëóáàÿÒåìàToolStripMenuItem->Name = L"ãîëóáàÿÒåìàToolStripMenuItem";
-			this->ãîëóáàÿÒåìàToolStripMenuItem->Size = System::Drawing::Size(180, 22);
-			this->ãîëóáàÿÒåìàToolStripMenuItem->Text = L"Ãîëóáàÿ òåìà";
-			this->ãîëóáàÿÒåìàToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::ãîëóáàÿÒåìàToolStripMenuItem_Click);
+			this->miColor3->Name = L"miColor3";
+			resources->ApplyResources(this->miColor3, L"miColor3");
+			this->miColor3->Click += gcnew System::EventHandler(this, &MyForm::miColor3_Click);
 			// 
-			// ñïğàâêàToolStripMenuItem
+			// miHelp
 			// 
-			this->ñïğàâêàToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->îÏğîãğàììåToolStripMenuItem });
-			this->ñïğàâêàToolStripMenuItem->Name = L"ñïğàâêàToolStripMenuItem";
-			this->ñïğàâêàToolStripMenuItem->Size = System::Drawing::Size(65, 20);
-			this->ñïğàâêàToolStripMenuItem->Text = L"Ñïğàâêà";
+			this->miHelp->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->miAbout });
+			this->miHelp->Name = L"miHelp";
+			resources->ApplyResources(this->miHelp, L"miHelp");
 			// 
-			// îÏğîãğàììåToolStripMenuItem
+			// miAbout
 			// 
-			this->îÏğîãğàììåToolStripMenuItem->Name = L"îÏğîãğàììåToolStripMenuItem";
-			this->îÏğîãğàììåToolStripMenuItem->Size = System::Drawing::Size(180, 22);
-			this->îÏğîãğàììåToolStripMenuItem->Text = L"Î ïğîãğàììå";
-			this->îÏğîãğàììåToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::îÏğîãğàììåToolStripMenuItem_Click);
+			this->miAbout->Name = L"miAbout";
+			resources->ApplyResources(this->miAbout, L"miAbout");
+			this->miAbout->Click += gcnew System::EventHandler(this, &MyForm::miAbout_Click);
 			// 
 			// MyForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			resources->ApplyResources(this, L"$this");
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::White;
-			this->ClientSize = System::Drawing::Size(554, 681);
 			this->Controls->Add(this->menuStrip1);
 			this->ForeColor = System::Drawing::Color::White;
 			this->MainMenuStrip = this->menuStrip1;
 			this->Name = L"MyForm";
-			this->Text = L"MyForm";
 			this->menuStrip1->ResumeLayout(false);
 			this->menuStrip1->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
+
 		}
 #pragma endregion
-	private: System::Void ñîõğàíèòüÊàêTXTToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	private: System::Void miSaveTxt_Click(System::Object^ sender, System::EventArgs^ e) {
 		SaveFileDialog^ dlg = gcnew SaveFileDialog();
 		dlg->Filter = "Text files (*.txt)|*.txt";
 		dlg->DefaultExt = "txt";
 		if (dlg->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
 			List<String^>^ vLines = gcnew List<String^>();
 			List<String^>^ eLines = gcnew List<String^>();
-			for (int i = 0;i < graph->Vertices->Count;i++) {
-				vLines->Add(graph->Vertices[i]->Name + "," + graph->Vertices[i]->X + "," + graph->Vertices->Y);
+			for (int i = 0; i < graph->Vertices->Count; i++) {
+				vLines->Add(graph->Vertices[i]->Name + "," + graph->Vertices[i]->X + "," + graph->Vertices[i]->Y);
 			}
-			for (int i = 0;i < graph->Edges->Count;i++) {
+			for (int i = 0; i < graph->Edges->Count; i++) {
 				eLines->Add(graph->Edges[i]->FromIndex + "," + graph->Edges[i]->ToIndex);
 			}
 			FileManager::SaveToTXT(dlg->FileName, vLines, eLines);
 		}
 	}
-	private: System::Void ñîõğàíèòüÊàêBINToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	private: System::Void miSaveBin_Click(System::Object^ sender, System::EventArgs^ e) {
 		SaveFileDialog^ dlg = gcnew SaveFileDialog();
 		dlg->Filter = "Binary files (*.bin)|*.bin";
 		dlg->DefaultExt = "bin";
 		if (dlg->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
 			List<String^>^ vLines = gcnew List<String^>();
 			List<String^>^ eLines = gcnew List<String^>();
-			for (int i = 0;i < graph->Vertices->Count;i++) {
-				vLines->Add(graph->Vertices[i]->Name + "," + graph->Vertices[i]->X + "," + graph->Vertices->Y);
+			for (int i = 0; i < graph->Vertices->Count; i++) {
+				vLines->Add(graph->Vertices[i]->Name + "," + graph->Vertices[i]->X + "," + graph->Vertices[i]->Y);
 			}
-			for (int i = 0;i < graph->Edges->Count;i++) {
+			for (int i = 0; i < graph->Edges->Count; i++) {
 				eLines->Add(graph->Edges[i]->FromIndex + "," + graph->Edges[i]->ToIndex);
 			}
 			FileManager::SaveToBIN(dlg->FileName, vLines, eLines);
 		}
 	}
-	private: System::Void çàãğóçèòüÈçTXTToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	private: System::Void miLoadTxt_Click(System::Object^ sender, System::EventArgs^ e) {
 		try {
 			OpenFileDialog^ ofg = gcnew OpenFileDialog();
 			ofg->Filter = "Text files (*.txt)|*.txt";
@@ -299,13 +270,14 @@ namespace curs {
 			}
 		}
 		catch (Exception^ ex) {
-			MessageBox::Show(ex->Message, "Îøèáêà", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			MessageBox::Show(ex->Message, "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 	}
-	private: System::Void çàãğóçèòüÈçBINToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	private: System::Void miLoadBin_Click(System::Object^ sender, System::EventArgs^ e) {
 		try {
 			OpenFileDialog^ ofg = gcnew OpenFileDialog();
-			ofg->Filter = "Binart files (*.bin)|*.bin";
+			ofg->Filter = "Binary files (*.bin)|*.bin";
 			if (ofg->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
 				List<String^>^ vLines = gcnew List<String^>();
 				List<String^>^ eLines = gcnew List<String^>();
@@ -333,26 +305,59 @@ namespace curs {
 						graph->AddEdge(from, to);
 					}
 				}
-
 			}
 		}
 		catch (Exception^ ex) {
-			MessageBox::Show(ex->Message, "Îøèáêà", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			MessageBox::Show(ex->Message, "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 	}
-	private: System::Void ğóññêèéToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	private: System::Void ApplyLocalization() {
+		this->Text = Localization::Get("app_title");
+		miFile->Text = Localization::Get("file");
+		miSaveTxt->Text = Localization::Get("save_txt");
+		miSaveBin->Text = Localization::Get("save_bin");
+		miLoadTxt->Text = Localization::Get("load_txt");
+		miLoadBin->Text = Localization::Get("load_bin");
+		miLanguage->Text = Localization::Get("language");
+		miLangRu->Text = Localization::Get("rus");
+		miLangEn->Text = Localization::Get("eng");
+		miLangBe->Text = Localization::Get("bel");
+		miView->Text = Localization::Get("view");
+		miColor1->Text = Localization::Get("color1");
+		miColor2->Text = Localization::Get("color2");
+		miColor3->Text = Localization::Get("color3");
+		miHelp->Text = Localization::Get("help");
+		miAbout->Text = Localization::Get("about");
 	}
-	private: System::Void englishToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	private: System::Void miLangRu_Click(System::Object^ sender, System::EventArgs^ e) {
+		Localization::SetLanguage(AppLanguage::Russian);
+		ApplyLocalization();
 	}
-	private: System::Void áåëîğóññêèéToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	private: System::Void miLangEn_Click(System::Object^ sender, System::EventArgs^ e) {
+		Localization::SetLanguage(AppLanguage::English);
+		ApplyLocalization();
 	}
-	private: System::Void ñâåòëàÿÒåìàToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	private: System::Void miLangBe_Click(System::Object^ sender, System::EventArgs^ e) {
+		Localization::SetLanguage(AppLanguage::Belarusian);
+		ApplyLocalization();
 	}
-	private: System::Void ò¸ìíàÿÒåìàToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	private: System::Void miColor1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: System::Void ãîëóáàÿÒåìàToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	private: System::Void miColor2_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: System::Void îÏğîãğàììåToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	private: System::Void miColor3_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+
+	private: System::Void miAbout_Click(System::Object^ sender, System::EventArgs^ e) {
+		HelpForm^ dlg = gcnew HelpForm();
+		dlg->ShowDialog(this);
 	}
 	};
 }

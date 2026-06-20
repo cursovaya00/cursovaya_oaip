@@ -85,8 +85,8 @@ public:
 		try {
 			vertexData = gcnew List<String^>();
 			edgeData = gcnew List<String^>();
-			IntPtr p = Marshal::StringToHGlobalAnsi(filePath);// ������������ String^ � char* (�������� ������ �������� ��� � char)
-			const char* cstr = static_cast<const char*>(p.ToPointer());// IntPtr ��� �� ��������� ������� ����� ���������
+			IntPtr p = Marshal::StringToHGlobalAnsi(filePath);
+			const char* cstr = static_cast<const char*>(p.ToPointer());
 			std::ifstream fin(cstr, std::ios::binary);
 			if (!fin.is_open()) { Marshal::FreeHGlobal(p); return false; }
 			int vCount = 0;
@@ -114,7 +114,7 @@ public:
 				edgeData->Add(str);
 			}
 			fin.close();
-			Marshal::FreeHGlobal(p);//����� ������ � char ������� ������
+			Marshal::FreeHGlobal(p);
 			return true;
 		}
 		catch (Exception^) { return false; }

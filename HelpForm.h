@@ -1,4 +1,5 @@
 #pragma once
+#include "Services/Localization.h"
 
 namespace curs {
 
@@ -9,24 +10,17 @@ namespace curs {
 	using namespace System::Data;
 	using namespace System::Drawing;
 
-	/// <summary>
-	/// Сводка для HelpForm
-	/// </summary>
 	public ref class HelpForm : public System::Windows::Forms::Form
 	{
 	public:
 		HelpForm(void)
 		{
+			Localization::Initialize();
 			InitializeComponent();
-			//
-			//TODO: добавьте код конструктора
-			//
+			ApplyLocalization();
 		}
 
 	protected:
-		/// <summary>
-		/// Освободить все используемые ресурсы.
-		/// </summary>
 		~HelpForm()
 		{
 			if (components)
@@ -39,16 +33,9 @@ namespace curs {
 	protected:
 
 	private:
-		/// <summary>
-		/// Обязательная переменная конструктора.
-		/// </summary>
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
-		/// <summary>
-		/// Требуемый метод для поддержки конструктора — не изменяйте 
-		/// содержимое этого метода с помощью редактора кода.
-		/// </summary>
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(HelpForm::typeid));
@@ -65,7 +52,7 @@ namespace curs {
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(185, 31);
 			this->label1->TabIndex = 0;
-			this->label1->Text = L"О программе:";
+			this->label1->Text = L"Рћ РїСЂРѕРіСЂР°РјРјРµ:";
 			// 
 			// textBox1
 			// 
@@ -79,7 +66,7 @@ namespace curs {
 			this->textBox1->ReadOnly = true;
 			this->textBox1->Size = System::Drawing::Size(370, 327);
 			this->textBox1->TabIndex = 1;
-			this->textBox1->Text = resources->GetString(L"textBox1.Text");
+			this->textBox1->Text = Localization::Get("help_text");
 			// 
 			// HelpForm
 			// 
@@ -88,15 +75,21 @@ namespace curs {
 			this->ClientSize = System::Drawing::Size(394, 401);
 			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->label1);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MaximizeBox = false;
 			this->Name = L"HelpForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterParent;
-			this->Text = L"Справка";
+			this->Text = L"РЎРїСЂР°РІРєР°";
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
+	private: System::Void ApplyLocalization() {
+		this->Text = Localization::Get("help");
+		label1->Text = Localization::Get("about") + ":";
+		textBox1->Text = Localization::Get("help_text");
+	}
 	};
 }
