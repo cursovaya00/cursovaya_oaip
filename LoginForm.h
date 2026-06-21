@@ -19,7 +19,7 @@ namespace curs {
 			UserManager::Initialize();
 			ApplyLocalization();
 		}
-		property bool IsAuth {
+		property bool IsAuth{
 			bool get() { return auth; }
 		}
 	protected:

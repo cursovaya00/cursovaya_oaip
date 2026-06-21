@@ -93,6 +93,10 @@ public:
 			en["save_bin"] = "Save as BIN";
 			bel["save_bin"] = "Захаваць як BIN";
 
+			ru["save_docx"] = "Сохранить как DOCX";
+			en["save_docx"] = "Save as DOCX";
+			bel["save_docx"] = "Захаваць як DOCX";
+
 			ru["load_txt"] = "Загрузить из TXT";
 			en["load_txt"] = "Load from TXT";
 			bel["load_txt"] = "Загрузiць з TXT";
@@ -100,6 +104,10 @@ public:
 			ru["load_bin"] = "Загрузить из BIN";
 			en["load_bin"] = "Load from BIN";
 			bel["load_bin"] = "Загрузiць з BIN";
+
+			ru["load_docx"] = "Загрузить из DOCX";
+			en["load_docx"] = "Load from DOCX";
+			bel["load_docx"] = "Загрузiць з DOCX";
 
 			ru["color1"] = "Светлая тема";
 			en["color1"] = "Light theme";

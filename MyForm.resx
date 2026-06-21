@@ -122,28 +122,40 @@
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="miSaveTxt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>153, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="miSaveTxt.Text" xml:space="preserve">
     <value>Save as TXT</value>
   </data>
   <data name="miSaveBin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>153, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="miSaveBin.Text" xml:space="preserve">
     <value>Save as BIN</value>
   </data>
+  <data name="miSaveDocx.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="miSaveDocx.Text" xml:space="preserve">
+    <value>Save as DOCX</value>
+  </data>
   <data name="miLoadTxt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>153, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="miLoadTxt.Text" xml:space="preserve">
     <value>Load from TXT</value>
   </data>
   <data name="miLoadBin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>153, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="miLoadBin.Text" xml:space="preserve">
     <value>Load from BIN</value>
+  </data>
+  <data name="miLoadDocx.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="miLoadDocx.Text" xml:space="preserve">
+    <value>Load from DOCX</value>
   </data>
   <data name="miFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>37, 20</value>
@@ -744,6 +756,12 @@
   <data name="&gt;&gt;miSaveBin.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;miSaveDocx.Name" xml:space="preserve">
+    <value>miSaveDocx</value>
+  </data>
+  <data name="&gt;&gt;miSaveDocx.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;miLoadTxt.Name" xml:space="preserve">
     <value>miLoadTxt</value>
   </data>
@@ -754,6 +772,12 @@
     <value>miLoadBin</value>
   </data>
   <data name="&gt;&gt;miLoadBin.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;miLoadDocx.Name" xml:space="preserve">
+    <value>miLoadDocx</value>
+  </data>
+  <data name="&gt;&gt;miLoadDocx.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;miLanguage.Name" xml:space="preserve">

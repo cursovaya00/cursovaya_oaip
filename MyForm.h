@@ -40,8 +40,10 @@ namespace curs {
 		System::Windows::Forms::ToolStripMenuItem^ miFile;
 		System::Windows::Forms::ToolStripMenuItem^ miSaveTxt;
 		System::Windows::Forms::ToolStripMenuItem^ miSaveBin;
+		System::Windows::Forms::ToolStripMenuItem^ miSaveDocx;
 		System::Windows::Forms::ToolStripMenuItem^ miLoadTxt;
 		System::Windows::Forms::ToolStripMenuItem^ miLoadBin;
+		System::Windows::Forms::ToolStripMenuItem^ miLoadDocx;
 		System::Windows::Forms::ToolStripMenuItem^ miLanguage;
 		System::Windows::Forms::ToolStripMenuItem^ miLangRu;
 		System::Windows::Forms::ToolStripMenuItem^ miLangEn;
@@ -80,8 +82,10 @@ namespace curs {
 			   this->miFile = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			   this->miSaveTxt = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			   this->miSaveBin = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			   this->miSaveDocx = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			   this->miLoadTxt = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			   this->miLoadBin = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			   this->miLoadDocx = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			   this->miLanguage = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			   this->miLangRu = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			   this->miLangEn = (gcnew System::Windows::Forms::ToolStripMenuItem());
@@ -123,9 +127,9 @@ namespace curs {
 			   // 
 			   // miFile
 			   // 
-			   this->miFile->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {
+			   this->miFile->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(6) {
 				   this->miSaveTxt, this->miSaveBin,
-					   this->miLoadTxt, this->miLoadBin
+					   this->miSaveDocx, this->miLoadTxt, this->miLoadBin, this->miLoadDocx
 			   });
 			   this->miFile->Name = L"miFile";
 			   resources->ApplyResources(this->miFile, L"miFile");
@@ -142,6 +146,12 @@ namespace curs {
 			   resources->ApplyResources(this->miSaveBin, L"miSaveBin");
 			   this->miSaveBin->Click += gcnew System::EventHandler(this, &MyForm::miSaveBin_Click);
 			   // 
+			   // miSaveDocx
+			   // 
+			   this->miSaveDocx->Name = L"miSaveDocx";
+			   resources->ApplyResources(this->miSaveDocx, L"miSaveDocx");
+			   this->miSaveDocx->Click += gcnew System::EventHandler(this, &MyForm::miSaveDocx_Click);
+			   // 
 			   // miLoadTxt
 			   // 
 			   this->miLoadTxt->Name = L"miLoadTxt";
@@ -153,6 +163,12 @@ namespace curs {
 			   this->miLoadBin->Name = L"miLoadBin";
 			   resources->ApplyResources(this->miLoadBin, L"miLoadBin");
 			   this->miLoadBin->Click += gcnew System::EventHandler(this, &MyForm::miLoadBin_Click);
+			   // 
+			   // miLoadDocx
+			   // 
+			   this->miLoadDocx->Name = L"miLoadDocx";
+			   resources->ApplyResources(this->miLoadDocx, L"miLoadDocx");
+			   this->miLoadDocx->Click += gcnew System::EventHandler(this, &MyForm::miLoadDocx_Click);
 			   // 
 			   // miLanguage
 			   // 
@@ -393,6 +409,23 @@ namespace curs {
 		}
 	}
 
+	private: System::Void miSaveDocx_Click(System::Object^ sender, System::EventArgs^ e) {
+		SaveFileDialog^ dlg = gcnew SaveFileDialog();
+		dlg->Filter = "Word documents (*.docx)|*.docx";
+		dlg->DefaultExt = "docx";
+		if (dlg->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
+			List<String^>^ vLines = gcnew List<String^>();
+			List<String^>^ eLines = gcnew List<String^>();
+			for (int i = 0; i < graph->Vertices->Count; i++) {
+				vLines->Add(graph->Vertices[i]->Name + "," + graph->Vertices[i]->X + "," + graph->Vertices[i]->Y);
+			}
+			for (int i = 0; i < graph->Edges->Count; i++) {
+				eLines->Add(graph->Edges[i]->FromIndex + "," + graph->Edges[i]->ToIndex);
+			}
+			FileManager::SaveToDOCX(dlg->FileName, vLines, eLines);
+		}
+	}
+
 	private: System::Void miLoadTxt_Click(System::Object^ sender, System::EventArgs^ e) {
 		try {
 			OpenFileDialog^ ofg = gcnew OpenFileDialog();
@@ -474,13 +507,56 @@ namespace curs {
 		}
 	}
 
+	private: System::Void miLoadDocx_Click(System::Object^ sender, System::EventArgs^ e) {
+		try {
+			OpenFileDialog^ ofg = gcnew OpenFileDialog();
+			ofg->Filter = "Word documents (*.docx)|*.docx";
+			if (ofg->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
+				List<String^>^ vLines = gcnew List<String^>();
+				List<String^>^ eLines = gcnew List<String^>();
+				FileManager::LoadFromDOCX(ofg->FileName, vLines, eLines);
+				graph = gcnew Graph();
+				for (int i = 0; i < vLines->Count; i++) {
+					String^ line = vLines[i];
+					int p1 = line->IndexOf(',');
+					int p2 = line->IndexOf(',', p1 + 1);
+					if (p1 >= 0 && p2 >= 0) {
+						String^ name = line->Substring(0, p1);
+						int x = 0, y = 0;
+						Int32::TryParse(line->Substring(p1 + 1, p2 - p1 - 1), x);
+						Int32::TryParse(line->Substring(p2 + 1), y);
+						graph->AddVertex(name, x, y);
+					}
+				}
+				UpdateComboBox();
+				for (int i = 0; i < eLines->Count; i++) {
+					String^ line = eLines[i];
+					int p1 = line->IndexOf(',');
+					if (p1 >= 0) {
+						int from = 0, to = 0;
+						Int32::TryParse(line->Substring(0, p1), from);
+						Int32::TryParse(line->Substring(p1 + 1), to);
+						graph->AddEdge(from, to);
+					}
+				}
+				UpdateComboBox();
+				pictureBox1->Invalidate();
+			}
+		}
+		catch (Exception^ ex) {
+			MessageBox::Show(Localization::Get("err_file_load"), Localization::Get("error"), MessageBoxButtons::OK, MessageBoxIcon::Error);
+		}
+	}
+
 	private:System::Void ApplyLocalization() {
 		this->Text = Localization::Get("app_title");
 		miFile->Text = Localization::Get("file");
 		miSaveTxt->Text = Localization::Get("save_txt");
 		miSaveBin->Text = Localization::Get("save_bin");
+		miSaveDocx->Text = Localization::Get("save_docx");
 		miLoadTxt->Text = Localization::Get("load_txt");
 		miLoadBin->Text = Localization::Get("load_bin");
+		miLoadDocx->Text = Localization::Get("load_docx");
 		miLanguage->Text = Localization::Get("language");
 		miLangRu->Text = Localization::Get("rus");
 		miLangEn->Text = Localization::Get("eng");
@@ -754,7 +830,6 @@ namespace curs {
 		catch (Exception^ ex) {
 			MessageBox::Show(ex->Message, Localization::Get("error"), MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
-
 	}
 	private:
 		int CountConnectedComponents() {
