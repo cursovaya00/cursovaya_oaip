@@ -121,6 +121,10 @@ public:
 			en["add_edge"] = "Add edge";
 			bel["add_edge"] = "Дадаць рабро";
 
+			ru["remove_vertex"] = "Удалить вершину";
+			en["remove_vertex"] = "Remove vertex";
+			bel["remove_vertex"] = "Выдалiць вяршыну";
+
 			ru["name"] = "Имя";
 			en["name"] = "Name";
 			bel["name"] = "Iмя";

@@ -77,6 +77,10 @@ namespace curs {
 			DFSRecursive(startIND, result);
 			return result;
 		}
+		void DFSNoClear(int startIND, List<int>^ result) {
+			if (startIND < 0 || startIND >= Vertices->Count) { return; }
+			DFSRecursive(startIND, result);
+		}
 	private:
 		void DFSRecursive(int current, List<int>^ order) {
 			Vertices[current]->IsVisited = true;
