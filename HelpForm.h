@@ -13,8 +13,10 @@ namespace curs {
 	public ref class HelpForm : public System::Windows::Forms::Form
 	{
 	public:
+		int theme;
 		HelpForm(void)
 		{
+			theme = 0;
 			Localization::Initialize();
 			InitializeComponent();
 			ApplyLocalization();
@@ -64,6 +66,7 @@ namespace curs {
 			this->textBox1->Multiline = true;
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->ReadOnly = true;
+			this->textBox1->ScrollBars = System::Windows::Forms::ScrollBars::Vertical;
 			this->textBox1->Size = System::Drawing::Size(370, 327);
 			this->textBox1->TabIndex = 1;
 			this->textBox1->Text = Localization::Get("help_text");
@@ -90,6 +93,30 @@ namespace curs {
 		this->Text = Localization::Get("help");
 		label1->Text = Localization::Get("about") + ":";
 		textBox1->Text = Localization::Get("help_text");
+		ApplyTheme();
+	}
+	private: System::Void ApplyTheme() {
+		if (theme == 0) {
+			this->BackColor = Color::White;
+			this->ForeColor = Color::Black;
+			label1->ForeColor = Color::Black;
+			textBox1->BackColor = Color::FromArgb(224, 224, 224);
+			textBox1->ForeColor = Color::Black;
+		}
+		else if (theme == 1) {
+			this->BackColor = Color::FromArgb(30, 30, 30);
+			this->ForeColor = Color::White;
+			label1->ForeColor = Color::White;
+			textBox1->BackColor = Color::FromArgb(50, 50, 50);
+			textBox1->ForeColor = Color::White;
+		}
+		else if (theme == 2) {
+			this->BackColor = Color::FromArgb(200, 220, 240);
+			this->ForeColor = Color::Black;
+			label1->ForeColor = Color::Black;
+			textBox1->BackColor = Color::White;
+			textBox1->ForeColor = Color::Black;
+		}
 	}
 	};
 }

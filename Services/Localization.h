@@ -173,6 +173,54 @@ public:
 			en["error"] = "Error";
 			bel["error"] = "Памылка";
 
+			ru["err_no_vertices_dfs"] = "Нет вершин для обхода. Добавьте вершины на поле.";
+			en["err_no_vertices_dfs"] = "No vertices to traverse. Add vertices to the field.";
+			bel["err_no_vertices_dfs"] = "Няма вяршынь для абыходу. Дадайце вяршыны на поле.";
+
+			ru["err_select_vertex"] = "Выберите стартовую вершину для обхода.";
+			en["err_select_vertex"] = "Select a start vertex for traversal.";
+			bel["err_select_vertex"] = "Выберыце стартавую вяршыну для абыходу.";
+
+			ru["err_no_vertices_edge"] = "Нет вершин для создания ребра. Добавьте минимум 2 вершины.";
+			en["err_no_vertices_edge"] = "No vertices to create an edge. Add at least 2 vertices.";
+			bel["err_no_vertices_edge"] = "Няма вяршынь для стварэння рабра. Дадайце мінімум 2 вяршыны.";
+
+			ru["err_same_vertex"] = "Нельзя соединить вершину с самой собой.";
+			en["err_same_vertex"] = "Cannot connect a vertex to itself.";
+			bel["err_same_vertex"] = "Нельзя злучыць вяршыну з самой сабой.";
+
+			ru["err_edge_exists"] = "Ребро между этими вершинами уже существует.";
+			en["err_edge_exists"] = "Edge between these vertices already exists.";
+			bel["err_edge_exists"] = "Рабро паміж гэтымі вяршынямі ўжо існуе.";
+
+			ru["err_add_edge"] = "Не удалось добавить ребро.";
+			en["err_add_edge"] = "Failed to add edge.";
+			bel["err_add_edge"] = "Не ўдалося дадаць рабро.";
+
+			ru["err_empty_name"] = "Введите имя вершины для удаления.";
+			en["err_empty_name"] = "Enter a vertex name to remove.";
+			bel["err_empty_name"] = "Увядзіце імя вяршыны для выдалення.";
+
+			ru["err_vertex_not_found"] = "Вершина с таким именем не найдена.";
+			en["err_vertex_not_found"] = "Vertex with this name not found.";
+			bel["err_vertex_not_found"] = "Вяршына з таким імем не знойдзена.";
+
+			ru["err_no_vertex_near"] = "Не удалось найти вершину рядом с курсором.";
+			en["err_no_vertex_near"] = "No vertex found near the cursor.";
+			bel["err_no_vertex_near"] = "Вяршына каля курсара не знойдзена.";
+
+			ru["err_file_load"] = "Ошибка загрузки файла.";
+			en["err_file_load"] = "Failed to load file.";
+			bel["err_file_load"] = "Памылка загрузкі файла.";
+
+			ru["err_file_save"] = "Ошибка сохранения файла.";
+			en["err_file_save"] = "Failed to save file.";
+			bel["err_file_save"] = "Памылка захавання файла.";
+
+			ru["err_empty_fields"] = "Заполните все поля.";
+			en["err_empty_fields"] = "Fill in all fields.";
+			bel["err_empty_fields"] = "Запоўніце ўсе палі.";
+
 			ru["success"] = "Успех";
 			en["success"] = "Success";
 			bel["success"] = "Поспех";
@@ -201,11 +249,11 @@ public:
 			en["bel"] = "Belarusian";
 			bel["bel"] = "Беларуская";
 
-			ru["help_text"] = "Программа для анализа графов с использованием обхода в глубину (DFS).\r\n\r\nВозможности:\r\nДобавление вершин с указанием имени и координат\r\nДобавление рёбер между вершинами\r\nУдаление вершин\r\nОбход графа в глубину (DFS)\r\nПодсчёт компонент связности\r\nСохранение и загрузка графа (TXT, BIN)\r\nСмена языка: русский, английский, белорусский\r\nСмена темы: светлая, тёмная, голубая\r\n\r\nКак пользоваться:\r\n1. Добавьте вершины, указав имя и координаты X, Y\r\n2. Соедините вершины рёбрами, указав индексы начальной и конечной вершины\r\n3. Выберите стартовую вершину для обхода\r\n4. Нажмите \"Запустить DFS\" для запуска обхода\r\n5. Результаты отобразятся в списке результатов\r\n\r\nФайлы:\r\nTXT \u2014 текстовый формат\r\nBIN \u2014 бинарный формат\r\n\r\nЯзыки:\r\nРусский\r\nEnglish\r\nБеларуская\r\n\r\nРазработчик: Вербовский Иван Александрович";
+			ru["help_text"] = "Программа для анализа графов с использованием обхода в глубину (DFS).\r\n\r\nВозможности:\r\nДобавление вершин кликом левой кнопкой мыши по полю\r\nУдаление вершин правой кнопкой мыши по вершине или по имени\r\nДобавление рёбер между вершинами через выпадающие списки\r\nОбход графа в глубину (DFS)\r\nПодсчёт компонент связности\r\nСохранение и загрузка графа (TXT, BIN)\r\nСмена языка: русский, английский, белорусский\r\nСмена темы: светлая, тёмная, голубая\r\n\r\nКак пользоваться:\r\n1. Добавьте вершины, кликнув левой кнопкой мыши в нужных местах поля\r\n2. Соедините вершины рёбрами: выберите «Откуда» и «Куда» в выпадающих списках, нажмите «Добавить ребро»\r\n3. Чтобы удалить вершину, кликните по ней правой кнопкой мыши или введите имя и нажмите «Удалить вершину»\r\n4. Выберите стартовую вершину для обхода в выпадающем списке «Выбрать старт»\r\n5. Нажмите «Запустить DFS» для запуска обхода\r\n6. Результаты отобразятся в списке результатов справа\r\n7. Используйте «Очистить» для сброса графа\r\n\r\nАвторизация:\r\nЛогин: admin / Пароль: admin\r\nЛогин: user / Пароль: user\r\nМожно зарегистрировать нового пользователя.\r\n\r\nФайлы:\r\nTXT — текстовый формат\r\nBIN — бинарный формат\r\n\r\nРазработчик: pop";
 
-			en["help_text"] = "Graph analyzer program using depth-first search (DFS).\r\n\r\nFeatures:\r\nAdding vertices with name and coordinates\r\nAdding edges between vertices\r\nRemoving vertices\r\nDepth-first traversal (DFS)\r\nCounting connected components\r\nSaving and loading graphs (TXT, BIN)\r\nLanguage switching: Russian, English, Belarusian\r\nTheme switching: light, dark, blue\r\n\r\nHow to use:\r\n1. Add vertices specifying name and coordinates X, Y\r\n2. Connect vertices with edges by specifying start and end vertex indices\r\n3. Select a start vertex for traversal\r\n4. Click \"Run DFS\" to start traversal\r\n5. Results will be displayed in the results list\r\n\r\nFiles:\r\nTXT \u2014 text format\r\nBIN \u2014 binary format\r\n\r\nLanguages:\r\nРусский\r\nEnglish\r\nБеларуская\r\n\r\nDeveloper: Ivan Verbovsky";
+			en["help_text"] = "Graph analyzer program using depth-first search (DFS).\r\n\r\nFeatures:\r\nAdding vertices by left-clicking on the field\r\nRemoving vertices by right-clicking on a vertex or by name\r\nAdding edges between vertices via dropdown lists\r\nDepth-first traversal (DFS)\r\nCounting connected components\r\nSaving and loading graphs (TXT, BIN)\r\nLanguage switching: Russian, English, Belarusian\r\nTheme switching: light, dark, blue\r\n\r\nHow to use:\r\n1. Add vertices by left-clicking on the desired positions in the field\r\n2. Connect vertices with edges: select \"From\" and \"To\" in the dropdown lists, click \"Add edge\"\r\n3. To remove a vertex, right-click on it or enter a name and click \"Remove vertex\"\r\n4. Select a start vertex for traversal in the \"Select start\" dropdown\r\n5. Click \"Run DFS\" to start traversal\r\n6. Results will be displayed in the results list on the right\r\n7. Use \"Clear\" to reset the graph\r\n\r\nAuthorization:\r\nLogin: admin / Password: admin\r\nLogin: user / Password: user\r\nYou can register a new user.\r\n\r\nFiles:\r\nTXT - text format\r\nBIN - binary format\r\n\r\nDeveloper: pop";
 
-			bel["help_text"] = "Праграма для аналiзу графаў з выкарыстаннем абходу ў глыбiню (DFS).\r\n\r\nМагчымасцi:\r\nДадаванне вяршынь з указаннем iмя i каардынат\r\nДадаванне раброў памiж вяршынямi\r\nВыдаленне вяршынь\r\nАбход графа ў глыбiню (DFS)\r\nПадлiк кампанентаў сувязi\r\nЗахаванне i загрузка графаў (TXT, BIN)\r\nЗмена мовы: руская, англiйская, беларуская\r\nЗмена тэмы: светлая, цёмная, блакiтная\r\n\r\nЯк карыстацца:\r\n1. Дадайце вяршыны, указаўшы iмя i каардынаты X, Y\r\n2. Злучыце вяршыны рабрамi, указаўшы iндэксы пачатковай i канцавай вяршыны\r\n3. Вылучыце стартавую вяршыну для абходу\r\n4. Нацiснiце \"Запусцiць DFS\" для запуску абходу\r\n5. Вынiкi адлюструюцца ў спiсе вынiкаў\r\n\r\nФайлы:\r\nTXT \u2014 тэкставы фармат\r\nBIN \u2014 бiнарны фармат\r\n\r\nМовы:\r\nРуская\r\nEnglish\r\nБеларуская\r\n\r\nРазработчык: Вербоўскi Іван Аляксандравiч";
+			bel["help_text"] = "Праграма для аналiзу графаў з выкарыстаннем абходу ў глыбiню (DFS).\r\n\r\nМагчымасцi:\r\nДадаванне вяршынь клiкам левай кнопкi мышы па полi\r\nВыдаленне вяршынь правай кнопкi мышы па вяршыне або па iменi\r\nДадаванне раброў памiж вяршынямi праз выпадальныя спiсы\r\nАбход графа ў глыбiню (DFS)\r\nПадлiк кампанентаў сувязi\r\nЗахаванне i загрузка графаў (TXT, BIN)\r\nЗмена мовы: руская, англiйская, беларуская\r\nЗмена тэмы: светлая, цёмная, блакiтная\r\n\r\nЯк карыстацца:\r\n1. Дадайце вяршыны, 클iкнуўшы левай кнопкi мышы ў патрэбных месцах поля\r\n2. Злучыце вяршыны рабрамi: выберыце «Адкуль» i «Куды» ў выпадальных спiсах, нацiснiце «Дадаць рабро»\r\n3. Каб выдалiць вяршыну, клiкнiце па ёй правай кнопкi мышы або ўвядзiце iмя i нацiснiце «Выдалiць вяршыну»\r\n4. Вылучыце стартавую вяршыну для абходу ў выпадальным спiсе «Выбраць старт»\r\n5. Нацiснiце «Запусцiць DFS» для запуску абходу\r\n6. Вынiкi адлюструюцца ў спiсе вынiкаў справа\r\n7. Выкарыстоўвайце «Ачысцiць» для скiду графа\r\n\r\nАўтарызацыя:\r\nЛагiн: admin / Пароль: admin\r\nЛагiн: user / Пароль: user\r\nМожна зарэгiстраваць новага карыстальнiка.\r\n\r\nФайлы:\r\nTXT - тэкставы фармат\r\nBIN - бiнарны фармат\r\n\r\nРазработчык: pop";
 		}
 	}
 	static void SetLanguage(AppLanguage lang) {

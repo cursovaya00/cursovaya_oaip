@@ -37,6 +37,7 @@ namespace curs {
 	private: System::Windows::Forms::TextBox^ textBox2;
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::Button^ button2;
+	private: System::Windows::Forms::ComboBox^ langCombo;
 
 	private:
 		bool auth;
@@ -52,6 +53,7 @@ namespace curs {
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->langCombo = (gcnew System::Windows::Forms::ComboBox());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -61,7 +63,7 @@ namespace curs {
 				static_cast<System::Byte>(204)));
 			this->label1->Location = System::Drawing::Point(125, 94);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(177, 29);
+			this->label1->Size = System::Drawing::Size(78, 29);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Login";
 			// 
@@ -70,7 +72,7 @@ namespace curs {
 			this->label2->AutoSize = true;
 			this->label2->Location = System::Drawing::Point(58, 166);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(109, 13);
+			this->label2->Size = System::Drawing::Size(58, 13);
 			this->label2->TabIndex = 1;
 			this->label2->Text = L"Username:";
 			// 
@@ -79,7 +81,7 @@ namespace curs {
 			this->label3->AutoSize = true;
 			this->label3->Location = System::Drawing::Point(58, 243);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(51, 13);
+			this->label3->Size = System::Drawing::Size(56, 13);
 			this->label3->TabIndex = 2;
 			this->label3->Text = L"Password:";
 			// 
@@ -122,11 +124,24 @@ namespace curs {
 			this->button2->UseVisualStyleBackColor = true;
 			this->button2->Click += gcnew System::EventHandler(this, &LoginForm::button2_Click);
 			// 
+			// langCombo
+			// 
+			this->langCombo->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->langCombo->FormattingEnabled = true;
+			this->langCombo->Items->AddRange(gcnew cli::array<System::Object^>(3) { L"RU", L"EN", L"BE" });
+			this->langCombo->Location = System::Drawing::Point(365, 12);
+			this->langCombo->Name = L"langCombo";
+			this->langCombo->Size = System::Drawing::Size(50, 21);
+			this->langCombo->TabIndex = 7;
+			this->langCombo->SelectedIndex = 0;
+			this->langCombo->SelectedIndexChanged += gcnew System::EventHandler(this, &LoginForm::langCombo_SelectedIndexChanged);
+			// 
 			// LoginForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(429, 397);
+			this->Controls->Add(this->langCombo);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->textBox2);
@@ -134,12 +149,14 @@ namespace curs {
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->MaximizeBox = false;
 			this->Name = L"LoginForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterParent;
 			this->Text = L"Login";
 			this->ResumeLayout(false);
 			this->PerformLayout();
+
 		}
 #pragma endregion
 	private: System::Void ApplyLocalization() {
@@ -149,6 +166,12 @@ namespace curs {
 		label3->Text = Localization::Get("password") + ":";
 		button1->Text = Localization::Get("enter");
 		button2->Text = Localization::Get("register_new");
+	}
+	private: System::Void langCombo_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+		if (langCombo->SelectedIndex == 0) Localization::SetLanguage(AppLanguage::Russian);
+		else if (langCombo->SelectedIndex == 1) Localization::SetLanguage(AppLanguage::English);
+		else Localization::SetLanguage(AppLanguage::Belarusian);
+		ApplyLocalization();
 	}
 	private: System::Void LoginForm_Load(System::Object^ sender, System::EventArgs^ e) {
 	}

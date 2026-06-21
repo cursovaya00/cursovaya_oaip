@@ -21,6 +21,7 @@ namespace curs {
 		{
 			Localization::Initialize();
 			graph = gcnew Graph();
+			currentTheme = 0;
 			InitializeComponent();
 			ApplyLocalization();
 		}
@@ -52,6 +53,7 @@ namespace curs {
 		System::Windows::Forms::ToolStripMenuItem^ miHelp;
 		System::Windows::Forms::ToolStripMenuItem^ miAbout;
 		Graph^ graph;
+		int currentTheme;
 	private: System::Windows::Forms::Panel^ panel1;
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::ComboBox^ comboBox3;
@@ -345,7 +347,6 @@ namespace curs {
 			   this->Controls->Add(this->pictureBox1);
 			   this->ForeColor = System::Drawing::Color::White;
 			   this->MainMenuStrip = this->menuStrip1;
-			   this->MaximizeBox = false;
 			   this->Name = L"MyForm";
 			   this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
 			   this->menuStrip1->ResumeLayout(false);
@@ -426,10 +427,11 @@ namespace curs {
 
 				}
 				UpdateComboBox();
+				pictureBox1->Invalidate();
 			}
 		}
 		catch (Exception^ ex) {
-			MessageBox::Show(ex->Message, "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			MessageBox::Show(Localization::Get("err_file_load"), Localization::Get("error"), MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 	}
 	private: System::Void miLoadBin_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -464,10 +466,11 @@ namespace curs {
 					}
 				}
 				UpdateComboBox();
+				pictureBox1->Invalidate();
 			}
 		}
 		catch (Exception^ ex) {
-			MessageBox::Show(ex->Message, "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			MessageBox::Show(Localization::Get("err_file_load"), Localization::Get("error"), MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 	}
 
@@ -514,6 +517,7 @@ namespace curs {
 	}
 
 	private: System::Void miColor1_Click(System::Object^ sender, System::EventArgs^ e) {
+		currentTheme = 0;
 		Color bg = System::Drawing::Color::White;
 		Color fg = System::Drawing::Color::Black;
 		Color ctrlBg = System::Drawing::Color::FromArgb(224, 224, 224);
@@ -535,8 +539,8 @@ namespace curs {
 		}
 		pictureBox1->Invalidate();
 	}
-
 	private: System::Void miColor2_Click(System::Object^ sender, System::EventArgs^ e) {
+		currentTheme = 1;
 		Color bg = System::Drawing::Color::FromArgb(30, 30, 30);
 		Color fg = System::Drawing::Color::White;
 		Color ctrlBg = System::Drawing::Color::FromArgb(50, 50, 50);
@@ -561,6 +565,7 @@ namespace curs {
 	}
 
 	private: System::Void miColor3_Click(System::Object^ sender, System::EventArgs^ e) {
+		currentTheme = 2;
 		Color bg = System::Drawing::Color::FromArgb(200, 220, 240);
 		Color fg = System::Drawing::Color::Black;
 		Color ctrlBg = System::Drawing::Color::FromArgb(170, 200, 230);
@@ -585,21 +590,37 @@ namespace curs {
 
 	private: System::Void miAbout_Click(System::Object^ sender, System::EventArgs^ e) {
 		HelpForm^ dlg = gcnew HelpForm();
+		dlg->theme = currentTheme;
 		dlg->ShowDialog(this);
 	}
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		try {
+			if (graph->Vertices->Count < 2) {
+				MessageBox::Show(Localization::Get("err_no_vertices_edge"), Localization::Get("error"), MessageBoxButtons::OK, MessageBoxIcon::Warning);
+				return;
+			}
 			if (comboBox2->SelectedIndex < 0 || comboBox3->SelectedIndex < 0) {
-				MessageBox::Show(Localization::Get("error"), Localization::Get("error"), MessageBoxButtons::OK, MessageBoxIcon::Warning);
+				MessageBox::Show(Localization::Get("err_empty_fields"), Localization::Get("error"), MessageBoxButtons::OK, MessageBoxIcon::Warning);
 				return;
 			}
 			int resultfrom = comboBox2->SelectedIndex;
 			int resultto = comboBox3->SelectedIndex;
+			if (resultfrom == resultto) {
+				MessageBox::Show(Localization::Get("err_same_vertex"), Localization::Get("error"), MessageBoxButtons::OK, MessageBoxIcon::Warning);
+				return;
+			}
+			for (int i = 0; i < graph->Edges->Count; i++) {
+				if ((graph->Edges[i]->FromIndex == resultfrom && graph->Edges[i]->ToIndex == resultto) ||
+					(graph->Edges[i]->FromIndex == resultto && graph->Edges[i]->ToIndex == resultfrom)) {
+					MessageBox::Show(Localization::Get("err_edge_exists"), Localization::Get("error"), MessageBoxButtons::OK, MessageBoxIcon::Warning);
+					return;
+				}
+			}
 			auto AE_result = graph->AddEdge(resultfrom, resultto);
 			if (!AE_result) {
-				MessageBox::Show(Localization::Get("error"), Localization::Get("error"), MessageBoxButtons::OK, MessageBoxIcon::Warning);
+				MessageBox::Show(Localization::Get("err_add_edge"), Localization::Get("error"), MessageBoxButtons::OK, MessageBoxIcon::Warning);
 				return;
 			}
 			pictureBox1->Invalidate();
@@ -611,12 +632,12 @@ namespace curs {
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 		String^ text_TB1 = this->textBox1->Text;
 		if (text_TB1 == "") {
-			MessageBox::Show(Localization::Get("error"), Localization::Get("error"), MessageBoxButtons::OK, MessageBoxIcon::Warning);
+			MessageBox::Show(Localization::Get("err_empty_name"), Localization::Get("error"), MessageBoxButtons::OK, MessageBoxIcon::Warning);
 			return;
 		}
 		int index = graph->FindVertexIndex(text_TB1);
 		if (index == -1) {
-			MessageBox::Show(Localization::Get("error"), Localization::Get("error"), MessageBoxButtons::OK, MessageBoxIcon::Warning);
+			MessageBox::Show(Localization::Get("err_vertex_not_found"), Localization::Get("error"), MessageBoxButtons::OK, MessageBoxIcon::Warning);
 			return;
 		}
 		graph->RemoveVertex(index);
@@ -657,9 +678,29 @@ namespace curs {
 		}
 	}
 	private: System::Void pictureBox1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
-		Pen^ pen = gcnew Pen(Color::Black, 2);
-		SolidBrush^ brush = gcnew SolidBrush(Color::LightBlue);
-		SolidBrush^ textBrush = gcnew SolidBrush(Color::Black);
+		Color edgeColor, vertexFill, vertexBorder, textColor;
+		if (currentTheme == 1) {
+			edgeColor = Color::FromArgb(100, 200, 255);
+			vertexFill = Color::FromArgb(70, 130, 180);
+			vertexBorder = Color::FromArgb(100, 200, 255);
+			textColor = Color::White;
+		}
+		else if (currentTheme == 2) {
+			edgeColor = Color::FromArgb(80, 80, 120);
+			vertexFill = Color::FromArgb(180, 210, 160);
+			vertexBorder = Color::FromArgb(80, 80, 120);
+			textColor = Color::Black;
+		}
+		else {
+			edgeColor = Color::Black;
+			vertexFill = Color::LightBlue;
+			vertexBorder = Color::Black;
+			textColor = Color::Black;
+		}
+		Pen^ pen = gcnew Pen(edgeColor, 2);
+		Pen^ borderPen = gcnew Pen(vertexBorder, 2);
+		SolidBrush^ brush = gcnew SolidBrush(vertexFill);
+		SolidBrush^ textBrush = gcnew SolidBrush(textColor);
 		System::Drawing::Font^ font = gcnew System::Drawing::Font("Arial", 9);
 		for (int i = 0; i < graph->Edges->Count; i++) {
 			int from = graph->Edges[i]->FromIndex;
@@ -674,10 +715,11 @@ namespace curs {
 			int x = graph->Vertices[i]->X;
 			int y = graph->Vertices[i]->Y;
 			e->Graphics->FillEllipse(brush, x - 15, y - 15, 30, 30);
-			e->Graphics->DrawEllipse(pen, x - 15, y - 15, 30, 30);
+			e->Graphics->DrawEllipse(borderPen, x - 15, y - 15, 30, 30);
 			e->Graphics->DrawString(graph->Vertices[i]->Name, font, textBrush, (float)(x - 10), (float)(y - 8));
 		}
 		delete pen;
+		delete borderPen;
 		delete brush;
 		delete textBrush;
 		delete font;
@@ -687,13 +729,13 @@ namespace curs {
 	}
 	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
 		try {
-			int idx = comboBox1->SelectedIndex;
-			if (idx < 0) {
-				MessageBox::Show(Localization::Get("error"), Localization::Get("error"), MessageBoxButtons::OK, MessageBoxIcon::Warning);
+			if (graph->Vertices->Count == 0) {
+				MessageBox::Show(Localization::Get("err_no_vertices_dfs"), Localization::Get("error"), MessageBoxButtons::OK, MessageBoxIcon::Warning);
 				return;
 			}
-			if (graph->Vertices->Count == 0) {
-				MessageBox::Show(Localization::Get("error"), Localization::Get("error"), MessageBoxButtons::OK, MessageBoxIcon::Warning);
+			int idx = comboBox1->SelectedIndex;
+			if (idx < 0) {
+				MessageBox::Show(Localization::Get("err_select_vertex"), Localization::Get("error"), MessageBoxButtons::OK, MessageBoxIcon::Warning);
 				return;
 			}
 			List<int>^ res_DFS = graph->DFS(idx);
