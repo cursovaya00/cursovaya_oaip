@@ -87,8 +87,7 @@ namespace curs {
 			// 
 			// textBox1
 			// 
-			this->textBox1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)));
+			this->textBox1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
 			this->textBox1->Location = System::Drawing::Point(61, 197);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(307, 20);
@@ -96,8 +95,7 @@ namespace curs {
 			// 
 			// textBox2
 			// 
-			this->textBox2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)));
+			this->textBox2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
 			this->textBox2->Location = System::Drawing::Point(61, 273);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(307, 20);

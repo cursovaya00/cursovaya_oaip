@@ -591,6 +591,7 @@ namespace curs {
 	private: System::Void miAbout_Click(System::Object^ sender, System::EventArgs^ e) {
 		HelpForm^ dlg = gcnew HelpForm();
 		dlg->theme = currentTheme;
+		dlg->ApplyTheme();
 		dlg->ShowDialog(this);
 	}
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {

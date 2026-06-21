@@ -48,8 +48,7 @@ namespace curs {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Times New Roman", 20.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
+			this->label1->Font = (gcnew System::Drawing::Font(L"Times New Roman", 20.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
 			this->label1->Location = System::Drawing::Point(12, 18);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(185, 31);
@@ -58,10 +57,8 @@ namespace curs {
 			// 
 			// textBox1
 			// 
-			this->textBox1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->textBox1->Font = (gcnew System::Drawing::Font(L"Times New Roman", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
+			this->textBox1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
+			this->textBox1->Font = (gcnew System::Drawing::Font(L"Times New Roman", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
 			this->textBox1->Location = System::Drawing::Point(12, 62);
 			this->textBox1->Multiline = true;
 			this->textBox1->Name = L"textBox1";
@@ -93,9 +90,8 @@ namespace curs {
 		this->Text = Localization::Get("help");
 		label1->Text = Localization::Get("about") + ":";
 		textBox1->Text = Localization::Get("help_text");
-		ApplyTheme();
 	}
-	private: System::Void ApplyTheme() {
+	public: void ApplyTheme() {
 		if (theme == 0) {
 			this->BackColor = Color::White;
 			this->ForeColor = Color::Black;
