@@ -144,10 +144,10 @@
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="Core\GraphClasses.h" />
-    <ClInclude Include="Core\FileManager.h" />
-    <ClInclude Include="Services\UserManager.h" />
-    <ClInclude Include="Services\Localization.h" />
+    <ClInclude Include="GraphClasses.h" />
+    <ClInclude Include="FileManager.h" />
+    <ClInclude Include="UserManager.h" />
+    <ClInclude Include="Localization.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="HelpForm.resx">

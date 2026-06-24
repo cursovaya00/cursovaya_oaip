@@ -1,8 +1,8 @@
 #pragma once
-#include "Core/GraphClasses.h"
-#include "Core/FileManager.h"
-#include "Services/Localization.h"
-#include "Services/UserManager.h"
+#include "GraphClasses.h"
+#include "FileManager.h"
+#include "Localization.h"
+#include "UserManager.h"
 #include "HelpForm.h"
 
 namespace curs {
@@ -37,23 +37,23 @@ namespace curs {
 
 	private:
 		System::Windows::Forms::MenuStrip^ menuStrip1;
-		System::Windows::Forms::ToolStripMenuItem^ miFile;
-		System::Windows::Forms::ToolStripMenuItem^ miSaveTxt;
-		System::Windows::Forms::ToolStripMenuItem^ miSaveBin;
-		System::Windows::Forms::ToolStripMenuItem^ miSaveDocx;
-		System::Windows::Forms::ToolStripMenuItem^ miLoadTxt;
-		System::Windows::Forms::ToolStripMenuItem^ miLoadBin;
-		System::Windows::Forms::ToolStripMenuItem^ miLoadDocx;
-		System::Windows::Forms::ToolStripMenuItem^ miLanguage;
-		System::Windows::Forms::ToolStripMenuItem^ miLangRu;
-		System::Windows::Forms::ToolStripMenuItem^ miLangEn;
-		System::Windows::Forms::ToolStripMenuItem^ miLangBe;
-		System::Windows::Forms::ToolStripMenuItem^ miView;
-		System::Windows::Forms::ToolStripMenuItem^ miColor1;
-		System::Windows::Forms::ToolStripMenuItem^ miColor2;
-		System::Windows::Forms::ToolStripMenuItem^ miColor3;
-		System::Windows::Forms::ToolStripMenuItem^ miHelp;
-		System::Windows::Forms::ToolStripMenuItem^ miAbout;
+		System::Windows::Forms::ToolStripMenuItem^ toolStripMenuItem1;
+		System::Windows::Forms::ToolStripMenuItem^ toolStripMenuItem2;
+		System::Windows::Forms::ToolStripMenuItem^ toolStripMenuItem3;
+		System::Windows::Forms::ToolStripMenuItem^ toolStripMenuItem4;
+		System::Windows::Forms::ToolStripMenuItem^ toolStripMenuItem5;
+		System::Windows::Forms::ToolStripMenuItem^ toolStripMenuItem6;
+		System::Windows::Forms::ToolStripMenuItem^ toolStripMenuItem7;
+		System::Windows::Forms::ToolStripMenuItem^ toolStripMenuItem8;
+		System::Windows::Forms::ToolStripMenuItem^ toolStripMenuItem9;
+		System::Windows::Forms::ToolStripMenuItem^ toolStripMenuItem10;
+		System::Windows::Forms::ToolStripMenuItem^ toolStripMenuItem11;
+		System::Windows::Forms::ToolStripMenuItem^ toolStripMenuItem12;
+		System::Windows::Forms::ToolStripMenuItem^ toolStripMenuItem13;
+		System::Windows::Forms::ToolStripMenuItem^ toolStripMenuItem14;
+		System::Windows::Forms::ToolStripMenuItem^ toolStripMenuItem15;
+		System::Windows::Forms::ToolStripMenuItem^ toolStripMenuItem16;
+		System::Windows::Forms::ToolStripMenuItem^ toolStripMenuItem17;
 		Graph^ graph;
 		int currentTheme;
 	private: System::Windows::Forms::Panel^ panel1;
@@ -74,28 +74,28 @@ namespace curs {
 
 		   System::ComponentModel::Container^ components;
 
-#pragma region Windows Form Designer generated code
+#pragma region
 		   void InitializeComponent(void)
 		   {
 			   System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
 			   this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
-			   this->miFile = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			   this->miSaveTxt = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			   this->miSaveBin = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			   this->miSaveDocx = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			   this->miLoadTxt = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			   this->miLoadBin = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			   this->miLoadDocx = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			   this->miLanguage = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			   this->miLangRu = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			   this->miLangEn = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			   this->miLangBe = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			   this->miView = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			   this->miColor1 = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			   this->miColor2 = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			   this->miColor3 = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			   this->miHelp = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			   this->miAbout = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			   this->toolStripMenuItem1 = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			   this->toolStripMenuItem2 = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			   this->toolStripMenuItem3 = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			   this->toolStripMenuItem4 = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			   this->toolStripMenuItem5 = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			   this->toolStripMenuItem6 = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			   this->toolStripMenuItem7 = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			   this->toolStripMenuItem8 = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			   this->toolStripMenuItem9 = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			   this->toolStripMenuItem10 = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			   this->toolStripMenuItem11 = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			   this->toolStripMenuItem12 = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			   this->toolStripMenuItem13 = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			   this->toolStripMenuItem14 = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			   this->toolStripMenuItem15 = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			   this->toolStripMenuItem16 = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			   this->toolStripMenuItem17 = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			   this->panel1 = (gcnew System::Windows::Forms::Panel());
 			   this->button4 = (gcnew System::Windows::Forms::Button());
 			   this->label4 = (gcnew System::Windows::Forms::Label());
@@ -119,122 +119,122 @@ namespace curs {
 			   // menuStrip1
 			   // 
 			   this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {
-				   this->miFile, this->miLanguage,
-					   this->miView, this->miHelp
+				   this->toolStripMenuItem1, this->toolStripMenuItem8,
+					   this->toolStripMenuItem12, this->toolStripMenuItem16
 			   });
 			   resources->ApplyResources(this->menuStrip1, L"menuStrip1");
 			   this->menuStrip1->Name = L"menuStrip1";
 			   // 
-			   // miFile
+			   // toolStripMenuItem1
 			   // 
-			   this->miFile->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(6) {
-				   this->miSaveTxt, this->miSaveBin,
-					   this->miSaveDocx, this->miLoadTxt, this->miLoadBin, this->miLoadDocx
+			   this->toolStripMenuItem1->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(6) {
+				   this->toolStripMenuItem2, this->toolStripMenuItem3,
+					   this->toolStripMenuItem4, this->toolStripMenuItem5, this->toolStripMenuItem6, this->toolStripMenuItem7
 			   });
-			   this->miFile->Name = L"miFile";
-			   resources->ApplyResources(this->miFile, L"miFile");
+			   this->toolStripMenuItem1->Name = L"toolStripMenuItem1";
+			   resources->ApplyResources(this->toolStripMenuItem1, L"toolStripMenuItem1");
 			   // 
-			   // miSaveTxt
+			   // toolStripMenuItem2
 			   // 
-			   this->miSaveTxt->Name = L"miSaveTxt";
-			   resources->ApplyResources(this->miSaveTxt, L"miSaveTxt");
-			   this->miSaveTxt->Click += gcnew System::EventHandler(this, &MyForm::miSaveTxt_Click);
+			   this->toolStripMenuItem2->Name = L"toolStripMenuItem2";
+			   resources->ApplyResources(this->toolStripMenuItem2, L"toolStripMenuItem2");
+			   this->toolStripMenuItem2->Click += gcnew System::EventHandler(this, &MyForm::toolStripMenuItem2_Click);
 			   // 
-			   // miSaveBin
+			   // toolStripMenuItem3
 			   // 
-			   this->miSaveBin->Name = L"miSaveBin";
-			   resources->ApplyResources(this->miSaveBin, L"miSaveBin");
-			   this->miSaveBin->Click += gcnew System::EventHandler(this, &MyForm::miSaveBin_Click);
+			   this->toolStripMenuItem3->Name = L"toolStripMenuItem3";
+			   resources->ApplyResources(this->toolStripMenuItem3, L"toolStripMenuItem3");
+			   this->toolStripMenuItem3->Click += gcnew System::EventHandler(this, &MyForm::toolStripMenuItem3_Click);
 			   // 
-			   // miSaveDocx
+			   // toolStripMenuItem4
 			   // 
-			   this->miSaveDocx->Name = L"miSaveDocx";
-			   resources->ApplyResources(this->miSaveDocx, L"miSaveDocx");
-			   this->miSaveDocx->Click += gcnew System::EventHandler(this, &MyForm::miSaveDocx_Click);
+			   this->toolStripMenuItem4->Name = L"toolStripMenuItem4";
+			   resources->ApplyResources(this->toolStripMenuItem4, L"toolStripMenuItem4");
+			   this->toolStripMenuItem4->Click += gcnew System::EventHandler(this, &MyForm::toolStripMenuItem4_Click);
 			   // 
-			   // miLoadTxt
+			   // toolStripMenuItem5
 			   // 
-			   this->miLoadTxt->Name = L"miLoadTxt";
-			   resources->ApplyResources(this->miLoadTxt, L"miLoadTxt");
-			   this->miLoadTxt->Click += gcnew System::EventHandler(this, &MyForm::miLoadTxt_Click);
+			   this->toolStripMenuItem5->Name = L"toolStripMenuItem5";
+			   resources->ApplyResources(this->toolStripMenuItem5, L"toolStripMenuItem5");
+			   this->toolStripMenuItem5->Click += gcnew System::EventHandler(this, &MyForm::toolStripMenuItem5_Click);
 			   // 
-			   // miLoadBin
+			   // toolStripMenuItem6
 			   // 
-			   this->miLoadBin->Name = L"miLoadBin";
-			   resources->ApplyResources(this->miLoadBin, L"miLoadBin");
-			   this->miLoadBin->Click += gcnew System::EventHandler(this, &MyForm::miLoadBin_Click);
+			   this->toolStripMenuItem6->Name = L"toolStripMenuItem6";
+			   resources->ApplyResources(this->toolStripMenuItem6, L"toolStripMenuItem6");
+			   this->toolStripMenuItem6->Click += gcnew System::EventHandler(this, &MyForm::toolStripMenuItem6_Click);
 			   // 
-			   // miLoadDocx
+			   // toolStripMenuItem7
 			   // 
-			   this->miLoadDocx->Name = L"miLoadDocx";
-			   resources->ApplyResources(this->miLoadDocx, L"miLoadDocx");
-			   this->miLoadDocx->Click += gcnew System::EventHandler(this, &MyForm::miLoadDocx_Click);
+			   this->toolStripMenuItem7->Name = L"toolStripMenuItem7";
+			   resources->ApplyResources(this->toolStripMenuItem7, L"toolStripMenuItem7");
+			   this->toolStripMenuItem7->Click += gcnew System::EventHandler(this, &MyForm::toolStripMenuItem7_Click);
 			   // 
-			   // miLanguage
+			   // toolStripMenuItem8
 			   // 
-			   this->miLanguage->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
-				   this->miLangRu,
-					   this->miLangEn, this->miLangBe
+			   this->toolStripMenuItem8->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
+				   this->toolStripMenuItem9,
+					   this->toolStripMenuItem10, this->toolStripMenuItem11
 			   });
-			   this->miLanguage->Name = L"miLanguage";
-			   resources->ApplyResources(this->miLanguage, L"miLanguage");
+			   this->toolStripMenuItem8->Name = L"toolStripMenuItem8";
+			   resources->ApplyResources(this->toolStripMenuItem8, L"toolStripMenuItem8");
 			   // 
-			   // miLangRu
+			   // toolStripMenuItem9
 			   // 
-			   this->miLangRu->Name = L"miLangRu";
-			   resources->ApplyResources(this->miLangRu, L"miLangRu");
-			   this->miLangRu->Click += gcnew System::EventHandler(this, &MyForm::miLangRu_Click);
+			   this->toolStripMenuItem9->Name = L"toolStripMenuItem9";
+			   resources->ApplyResources(this->toolStripMenuItem9, L"toolStripMenuItem9");
+			   this->toolStripMenuItem9->Click += gcnew System::EventHandler(this, &MyForm::toolStripMenuItem9_Click);
 			   // 
-			   // miLangEn
+			   // toolStripMenuItem10
 			   // 
-			   this->miLangEn->Name = L"miLangEn";
-			   resources->ApplyResources(this->miLangEn, L"miLangEn");
-			   this->miLangEn->Click += gcnew System::EventHandler(this, &MyForm::miLangEn_Click);
+			   this->toolStripMenuItem10->Name = L"toolStripMenuItem10";
+			   resources->ApplyResources(this->toolStripMenuItem10, L"toolStripMenuItem10");
+			   this->toolStripMenuItem10->Click += gcnew System::EventHandler(this, &MyForm::toolStripMenuItem10_Click);
 			   // 
-			   // miLangBe
+			   // toolStripMenuItem11
 			   // 
-			   this->miLangBe->Name = L"miLangBe";
-			   resources->ApplyResources(this->miLangBe, L"miLangBe");
-			   this->miLangBe->Click += gcnew System::EventHandler(this, &MyForm::miLangBe_Click);
+			   this->toolStripMenuItem11->Name = L"toolStripMenuItem11";
+			   resources->ApplyResources(this->toolStripMenuItem11, L"toolStripMenuItem11");
+			   this->toolStripMenuItem11->Click += gcnew System::EventHandler(this, &MyForm::toolStripMenuItem11_Click);
 			   // 
-			   // miView
+			   // toolStripMenuItem12
 			   // 
-			   this->miView->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
-				   this->miColor1, this->miColor2,
-					   this->miColor3
+			   this->toolStripMenuItem12->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
+				   this->toolStripMenuItem13, this->toolStripMenuItem14,
+					   this->toolStripMenuItem15
 			   });
-			   this->miView->Name = L"miView";
-			   resources->ApplyResources(this->miView, L"miView");
+			   this->toolStripMenuItem12->Name = L"toolStripMenuItem12";
+			   resources->ApplyResources(this->toolStripMenuItem12, L"toolStripMenuItem12");
 			   // 
-			   // miColor1
+			   // toolStripMenuItem13
 			   // 
-			   this->miColor1->Name = L"miColor1";
-			   resources->ApplyResources(this->miColor1, L"miColor1");
-			   this->miColor1->Click += gcnew System::EventHandler(this, &MyForm::miColor1_Click);
+			   this->toolStripMenuItem13->Name = L"toolStripMenuItem13";
+			   resources->ApplyResources(this->toolStripMenuItem13, L"toolStripMenuItem13");
+			   this->toolStripMenuItem13->Click += gcnew System::EventHandler(this, &MyForm::toolStripMenuItem13_Click);
 			   // 
-			   // miColor2
+			   // toolStripMenuItem14
 			   // 
-			   this->miColor2->Name = L"miColor2";
-			   resources->ApplyResources(this->miColor2, L"miColor2");
-			   this->miColor2->Click += gcnew System::EventHandler(this, &MyForm::miColor2_Click);
+			   this->toolStripMenuItem14->Name = L"toolStripMenuItem14";
+			   resources->ApplyResources(this->toolStripMenuItem14, L"toolStripMenuItem14");
+			   this->toolStripMenuItem14->Click += gcnew System::EventHandler(this, &MyForm::toolStripMenuItem14_Click);
 			   // 
-			   // miColor3
+			   // toolStripMenuItem15
 			   // 
-			   this->miColor3->Name = L"miColor3";
-			   resources->ApplyResources(this->miColor3, L"miColor3");
-			   this->miColor3->Click += gcnew System::EventHandler(this, &MyForm::miColor3_Click);
+			   this->toolStripMenuItem15->Name = L"toolStripMenuItem15";
+			   resources->ApplyResources(this->toolStripMenuItem15, L"toolStripMenuItem15");
+			   this->toolStripMenuItem15->Click += gcnew System::EventHandler(this, &MyForm::toolStripMenuItem15_Click);
 			   // 
-			   // miHelp
+			   // toolStripMenuItem16
 			   // 
-			   this->miHelp->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->miAbout });
-			   this->miHelp->Name = L"miHelp";
-			   resources->ApplyResources(this->miHelp, L"miHelp");
+			   this->toolStripMenuItem16->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->toolStripMenuItem17 });
+			   this->toolStripMenuItem16->Name = L"toolStripMenuItem16";
+			   resources->ApplyResources(this->toolStripMenuItem16, L"toolStripMenuItem16");
 			   // 
-			   // miAbout
+			   // toolStripMenuItem17
 			   // 
-			   this->miAbout->Name = L"miAbout";
-			   resources->ApplyResources(this->miAbout, L"miAbout");
-			   this->miAbout->Click += gcnew System::EventHandler(this, &MyForm::miAbout_Click);
+			   this->toolStripMenuItem17->Name = L"toolStripMenuItem17";
+			   resources->ApplyResources(this->toolStripMenuItem17, L"toolStripMenuItem17");
+			   this->toolStripMenuItem17->Click += gcnew System::EventHandler(this, &MyForm::toolStripMenuItem17_Click);
 			   // 
 			   // panel1
 			   // 
@@ -375,7 +375,7 @@ namespace curs {
 
 		   }
 #pragma endregion
-	private: System::Void miSaveTxt_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void toolStripMenuItem2_Click(System::Object^ sender, System::EventArgs^ e) {
 		SaveFileDialog^ dlg = gcnew SaveFileDialog();
 		dlg->Filter = "Text files (*.txt)|*.txt";
 		dlg->DefaultExt = "txt";
@@ -392,7 +392,7 @@ namespace curs {
 		}
 	}
 
-	private: System::Void miSaveBin_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void toolStripMenuItem3_Click(System::Object^ sender, System::EventArgs^ e) {
 		SaveFileDialog^ dlg = gcnew SaveFileDialog();
 		dlg->Filter = "Binary files (*.bin)|*.bin";
 		dlg->DefaultExt = "bin";
@@ -409,7 +409,7 @@ namespace curs {
 		}
 	}
 
-	private: System::Void miSaveDocx_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void toolStripMenuItem4_Click(System::Object^ sender, System::EventArgs^ e) {
 		SaveFileDialog^ dlg = gcnew SaveFileDialog();
 		dlg->Filter = "Word documents (*.docx)|*.docx";
 		dlg->DefaultExt = "docx";
@@ -426,7 +426,7 @@ namespace curs {
 		}
 	}
 
-	private: System::Void miLoadTxt_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void toolStripMenuItem5_Click(System::Object^ sender, System::EventArgs^ e) {
 		try {
 			OpenFileDialog^ ofg = gcnew OpenFileDialog();
 			ofg->Filter = "Text files (*.txt)|*.txt";
@@ -467,7 +467,7 @@ namespace curs {
 			MessageBox::Show(Localization::Get("err_file_load"), Localization::Get("error"), MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 	}
-	private: System::Void miLoadBin_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void toolStripMenuItem6_Click(System::Object^ sender, System::EventArgs^ e) {
 		try {
 			OpenFileDialog^ ofg = gcnew OpenFileDialog();
 			ofg->Filter = "Binary files (*.bin)|*.bin";
@@ -507,7 +507,7 @@ namespace curs {
 		}
 	}
 
-	private: System::Void miLoadDocx_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void toolStripMenuItem7_Click(System::Object^ sender, System::EventArgs^ e) {
 		try {
 			OpenFileDialog^ ofg = gcnew OpenFileDialog();
 			ofg->Filter = "Word documents (*.docx)|*.docx";
@@ -550,23 +550,23 @@ namespace curs {
 
 	private:System::Void ApplyLocalization() {
 		this->Text = Localization::Get("app_title");
-		miFile->Text = Localization::Get("file");
-		miSaveTxt->Text = Localization::Get("save_txt");
-		miSaveBin->Text = Localization::Get("save_bin");
-		miSaveDocx->Text = Localization::Get("save_docx");
-		miLoadTxt->Text = Localization::Get("load_txt");
-		miLoadBin->Text = Localization::Get("load_bin");
-		miLoadDocx->Text = Localization::Get("load_docx");
-		miLanguage->Text = Localization::Get("language");
-		miLangRu->Text = Localization::Get("rus");
-		miLangEn->Text = Localization::Get("eng");
-		miLangBe->Text = Localization::Get("bel");
-		miView->Text = Localization::Get("view");
-		miColor1->Text = Localization::Get("color1");
-		miColor2->Text = Localization::Get("color2");
-		miColor3->Text = Localization::Get("color3");
-		miHelp->Text = Localization::Get("help");
-		miAbout->Text = Localization::Get("about");
+		toolStripMenuItem1->Text = Localization::Get("file");
+		toolStripMenuItem2->Text = Localization::Get("save_txt");
+		toolStripMenuItem3->Text = Localization::Get("save_bin");
+		toolStripMenuItem4->Text = Localization::Get("save_docx");
+		toolStripMenuItem5->Text = Localization::Get("load_txt");
+		toolStripMenuItem6->Text = Localization::Get("load_bin");
+		toolStripMenuItem7->Text = Localization::Get("load_docx");
+		toolStripMenuItem8->Text = Localization::Get("language");
+		toolStripMenuItem9->Text = Localization::Get("rus");
+		toolStripMenuItem10->Text = Localization::Get("eng");
+		toolStripMenuItem11->Text = Localization::Get("bel");
+		toolStripMenuItem12->Text = Localization::Get("view");
+		toolStripMenuItem13->Text = Localization::Get("color1");
+		toolStripMenuItem14->Text = Localization::Get("color2");
+		toolStripMenuItem15->Text = Localization::Get("color3");
+		toolStripMenuItem16->Text = Localization::Get("help");
+		toolStripMenuItem17->Text = Localization::Get("about");
 		label1->Text = Localization::Get("name") + ":";
 		label2->Text = Localization::Get("from") + ":";
 		label3->Text = Localization::Get("to") + ":";
@@ -577,22 +577,22 @@ namespace curs {
 		button4->Text = Localization::Get("run_dfs");
 	}
 
-	private: System::Void miLangRu_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void toolStripMenuItem9_Click(System::Object^ sender, System::EventArgs^ e) {
 		Localization::SetLanguage(AppLanguage::Russian);
 		ApplyLocalization();
 	}
 
-	private: System::Void miLangEn_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void toolStripMenuItem10_Click(System::Object^ sender, System::EventArgs^ e) {
 		Localization::SetLanguage(AppLanguage::English);
 		ApplyLocalization();
 	}
 
-	private: System::Void miLangBe_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void toolStripMenuItem11_Click(System::Object^ sender, System::EventArgs^ e) {
 		Localization::SetLanguage(AppLanguage::Belarusian);
 		ApplyLocalization();
 	}
 
-	private: System::Void miColor1_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void toolStripMenuItem13_Click(System::Object^ sender, System::EventArgs^ e) {
 		currentTheme = 0;
 		Color bg = System::Drawing::Color::White;
 		Color fg = System::Drawing::Color::Black;
@@ -615,7 +615,7 @@ namespace curs {
 		}
 		pictureBox1->Invalidate();
 	}
-	private: System::Void miColor2_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void toolStripMenuItem14_Click(System::Object^ sender, System::EventArgs^ e) {
 		currentTheme = 1;
 		Color bg = System::Drawing::Color::FromArgb(30, 30, 30);
 		Color fg = System::Drawing::Color::White;
@@ -640,7 +640,7 @@ namespace curs {
 		pictureBox1->Invalidate();
 	}
 
-	private: System::Void miColor3_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void toolStripMenuItem15_Click(System::Object^ sender, System::EventArgs^ e) {
 		currentTheme = 2;
 		Color bg = System::Drawing::Color::FromArgb(200, 220, 240);
 		Color fg = System::Drawing::Color::Black;
@@ -664,7 +664,7 @@ namespace curs {
 		pictureBox1->Invalidate();
 	}
 
-	private: System::Void miAbout_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void toolStripMenuItem17_Click(System::Object^ sender, System::EventArgs^ e) {
 		HelpForm^ dlg = gcnew HelpForm();
 		dlg->theme = currentTheme;
 		dlg->ApplyTheme();
@@ -707,99 +707,113 @@ namespace curs {
 		}
 	}
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-		String^ text_TB1 = this->textBox1->Text;
-		if (text_TB1 == "") {
-			MessageBox::Show(Localization::Get("err_empty_name"), Localization::Get("error"), MessageBoxButtons::OK, MessageBoxIcon::Warning);
-			return;
-		}
-		int index = graph->FindVertexIndex(text_TB1);
-		if (index == -1) {
-			MessageBox::Show(Localization::Get("err_vertex_not_found"), Localization::Get("error"), MessageBoxButtons::OK, MessageBoxIcon::Warning);
-			return;
-		}
-		graph->RemoveVertex(index);
-		textBox1->Clear();
-		pictureBox1->Invalidate();
-		UpdateComboBox();
-	}
-	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
-		graph = gcnew Graph();
-		pictureBox1->Invalidate();
-		UpdateComboBox();
-	}
-	private: System::Void pictureBox1_MouseClick(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
-		if (e->Button == System::Windows::Forms::MouseButtons::Left) {
-			String^ name = "V" + (graph->Vertices->Count + 1);
-			graph->AddVertex(name, e->X, e->Y);
+		try {
+			String^ text_TB1 = this->textBox1->Text;
+			if (text_TB1 == "") {
+				MessageBox::Show(Localization::Get("err_empty_name"), Localization::Get("error"), MessageBoxButtons::OK, MessageBoxIcon::Warning);
+				return;
+			}
+			int index = graph->FindVertexIndex(text_TB1);
+			if (index == -1) {
+				MessageBox::Show(Localization::Get("err_vertex_not_found"), Localization::Get("error"), MessageBoxButtons::OK, MessageBoxIcon::Warning);
+				return;
+			}
+			graph->RemoveVertex(index);
+			textBox1->Clear();
 			pictureBox1->Invalidate();
 			UpdateComboBox();
 		}
-		else if (e->Button == System::Windows::Forms::MouseButtons::Right) {
-			if (graph->Vertices->Count == 0) return;
-			int bestIdx = -1;
-			int bestDist = 1000;
-			for (int i = 0; i < graph->Vertices->Count; i++) {
-				int dx = graph->Vertices[i]->X - e->X;
-				int dy = graph->Vertices[i]->Y - e->Y;
-				int dist = dx * dx + dy * dy;
-				if (dist < bestDist) {
-					bestDist = dist;
-					bestIdx = i;
-				}
-			}
-			if (bestIdx >= 0 && bestDist <= 900) {
-				graph->RemoveVertex(bestIdx);
+		catch (Exception^) {}
+	}
+	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+		try {
+			graph = gcnew Graph();
+			pictureBox1->Invalidate();
+			UpdateComboBox();
+		}
+		catch (Exception^) {}
+	}
+	private: System::Void pictureBox1_MouseClick(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+		try {
+			if (e->Button == System::Windows::Forms::MouseButtons::Left) {
+				String^ name = "V" + (graph->Vertices->Count + 1);
+				graph->AddVertex(name, e->X, e->Y);
 				pictureBox1->Invalidate();
 				UpdateComboBox();
 			}
+			else if (e->Button == System::Windows::Forms::MouseButtons::Right) {
+				if (graph->Vertices->Count == 0) return;
+				int bestIdx = -1;
+				int bestDist = 1000;
+				for (int i = 0; i < graph->Vertices->Count; i++) {
+					int dx = graph->Vertices[i]->X - e->X;
+					int dy = graph->Vertices[i]->Y - e->Y;
+					int dist = dx * dx + dy * dy;
+					if (dist < bestDist) {
+						bestDist = dist;
+						bestIdx = i;
+					}
+				}
+				if (bestIdx >= 0 && bestDist <= 900) {
+					graph->RemoveVertex(bestIdx);
+					pictureBox1->Invalidate();
+					UpdateComboBox();
+				}
+			}
 		}
+		catch (Exception^) {}
 	}
 	private: System::Void pictureBox1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
-		Color edgeColor, vertexFill, vertexBorder, textColor;
-		if (currentTheme == 1) {
-			edgeColor = Color::FromArgb(100, 200, 255);
-			vertexFill = Color::FromArgb(70, 130, 180);
-			vertexBorder = Color::FromArgb(100, 200, 255);
-			textColor = Color::White;
+		try {
+			Color edgeColor, vertexFill, vertexBorder, textColor;
+			if (currentTheme == 1) {
+				edgeColor = Color::FromArgb(100, 200, 255);
+				vertexFill = Color::FromArgb(70, 130, 180);
+				vertexBorder = Color::FromArgb(100, 200, 255);
+				textColor = Color::White;
+			}
+			else if (currentTheme == 2) {
+				edgeColor = Color::FromArgb(80, 80, 120);
+				vertexFill = Color::FromArgb(180, 210, 160);
+				vertexBorder = Color::FromArgb(80, 80, 120);
+				textColor = Color::Black;
+			}
+			else {
+				edgeColor = Color::Black;
+				vertexFill = Color::LightBlue;
+				vertexBorder = Color::Black;
+				textColor = Color::Black;
+			}
+			Pen^ pen = gcnew Pen(edgeColor, 2);
+			Pen^ borderPen = gcnew Pen(vertexBorder, 2);
+			SolidBrush^ brush = gcnew SolidBrush(vertexFill);
+			SolidBrush^ textBrush = gcnew SolidBrush(textColor);
+			System::Drawing::Font^ font = gcnew System::Drawing::Font("Arial", 9);
+			for (int i = 0; i < graph->Edges->Count; i++) {
+				int from = graph->Edges[i]->FromIndex;
+				int to = graph->Edges[i]->ToIndex;
+				if (from < 0 || from >= graph->Vertices->Count) continue;
+				if (to < 0 || to >= graph->Vertices->Count) continue;
+				int x1 = graph->Vertices[from]->X;
+				int y1 = graph->Vertices[from]->Y;
+				int x2 = graph->Vertices[to]->X;
+				int y2 = graph->Vertices[to]->Y;
+				e->Graphics->DrawLine(pen, x1, y1, x2, y2);
+			}
+			for (int i = 0; i < graph->Vertices->Count; i++) {
+				int x = graph->Vertices[i]->X;
+				int y = graph->Vertices[i]->Y;
+				e->Graphics->FillEllipse(brush, x - 15, y - 15, 30, 30);
+				e->Graphics->DrawEllipse(borderPen, x - 15, y - 15, 30, 30);
+				e->Graphics->DrawString(graph->Vertices[i]->Name, font, textBrush, (float)(x - 10), (float)(y - 8));
+			}
+			delete pen;
+			delete borderPen;
+			delete brush;
+			delete textBrush;
+			delete font;
 		}
-		else if (currentTheme == 2) {
-			edgeColor = Color::FromArgb(80, 80, 120);
-			vertexFill = Color::FromArgb(180, 210, 160);
-			vertexBorder = Color::FromArgb(80, 80, 120);
-			textColor = Color::Black;
-		}
-		else {
-			edgeColor = Color::Black;
-			vertexFill = Color::LightBlue;
-			vertexBorder = Color::Black;
-			textColor = Color::Black;
-		}
-		Pen^ pen = gcnew Pen(edgeColor, 2);
-		Pen^ borderPen = gcnew Pen(vertexBorder, 2);
-		SolidBrush^ brush = gcnew SolidBrush(vertexFill);
-		SolidBrush^ textBrush = gcnew SolidBrush(textColor);
-		System::Drawing::Font^ font = gcnew System::Drawing::Font("Arial", 9);
-		for (int i = 0; i < graph->Edges->Count; i++) {
-			int from = graph->Edges[i]->FromIndex;
-			int to = graph->Edges[i]->ToIndex;
-			int x1 = graph->Vertices[from]->X;
-			int y1 = graph->Vertices[from]->Y;
-			int x2 = graph->Vertices[to]->X;
-			int y2 = graph->Vertices[to]->Y;
-			e->Graphics->DrawLine(pen, x1, y1, x2, y2);
-		}
-		for (int i = 0; i < graph->Vertices->Count; i++) {
-			int x = graph->Vertices[i]->X;
-			int y = graph->Vertices[i]->Y;
-			e->Graphics->FillEllipse(brush, x - 15, y - 15, 30, 30);
-			e->Graphics->DrawEllipse(borderPen, x - 15, y - 15, 30, 30);
-			e->Graphics->DrawString(graph->Vertices[i]->Name, font, textBrush, (float)(x - 10), (float)(y - 8));
-		}
-		delete pen;
-		delete borderPen;
-		delete brush;
-		delete textBrush;
-		delete font;
+		catch (Exception^) {}
 	}
 
 	private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
@@ -833,32 +847,38 @@ namespace curs {
 	}
 	private:
 		int CountConnectedComponents() {
-			graph->ClearVisited();
-			int count = 0;
-			for (int i = 0;i < graph->Vertices->Count;i++) {
-				if (!graph->Vertices[i]->IsVisited) {
-					graph->DFSNoClear(i, gcnew List<int>());
-					count++;
+			try {
+				graph->ClearVisited();
+				int count = 0;
+				for (int i = 0;i < graph->Vertices->Count;i++) {
+					if (!graph->Vertices[i]->IsVisited) {
+						graph->DFSNoClear(i, gcnew List<int>());
+						count++;
+					}
 				}
+				return count;
 			}
-			return count;
+			catch (Exception^) { return 0; }
 		}
 	private:
 		void UpdateComboBox() {
-			comboBox1->Items->Clear();
-			comboBox2->Items->Clear();
-			comboBox3->Items->Clear();
-			for (int i = 0;i < graph->Vertices->Count;i++) {
-				comboBox1->Items->Add(graph->Vertices[i]->Name);
-				comboBox2->Items->Add(graph->Vertices[i]->Name);
-				comboBox3->Items->Add(graph->Vertices[i]->Name);
+			try {
+				comboBox1->Items->Clear();
+				comboBox2->Items->Clear();
+				comboBox3->Items->Clear();
+				for (int i = 0;i < graph->Vertices->Count;i++) {
+					comboBox1->Items->Add(graph->Vertices[i]->Name);
+					comboBox2->Items->Add(graph->Vertices[i]->Name);
+					comboBox3->Items->Add(graph->Vertices[i]->Name);
+				}
+				if (comboBox1->Items->Count > 0)
+					comboBox1->SelectedIndex = 0;
+				if (comboBox2->Items->Count > 0)
+					comboBox2->SelectedIndex = 0;
+				if (comboBox3->Items->Count > 0)
+					comboBox3->SelectedIndex = 0;
 			}
-			if (comboBox1->Items->Count > 0)
-				comboBox1->SelectedIndex = 0;
-			if (comboBox2->Items->Count > 0)
-				comboBox2->SelectedIndex = 0;
-			if (comboBox3->Items->Count > 0)
-				comboBox3->SelectedIndex = 0;
+			catch (Exception^) {}
 		}
 	};
 }

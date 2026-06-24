@@ -1,6 +1,6 @@
 #pragma once
-#include "Services/UserManager.h"
-#include "Services/Localization.h"
+#include "UserManager.h"
+#include "Localization.h"
 namespace curs {
 
 	using namespace System;

@@ -1,5 +1,5 @@
 #pragma once
-#include "Services/Localization.h"
+#include "Localization.h"
 
 namespace curs {
 

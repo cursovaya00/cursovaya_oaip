@@ -5,6 +5,7 @@
 using namespace System;
 using namespace System::IO;
 using namespace System::Collections::Generic;
+using namespace System::Windows::Forms;
 using namespace System::Runtime::InteropServices;
 
 public ref class FileManager {
@@ -14,13 +15,16 @@ public:
 			StreamWriter^ sw = gcnew StreamWriter(filePath, false, System::Text::Encoding::UTF8);
 			sw->WriteLine("Graph Data");
 			sw->WriteLine("[VERTICES]");
-			for each(String ^ vertex in vertexLines) sw->WriteLine(vertex);
+			for each (String ^ vertex in vertexLines) sw->WriteLine(vertex);
 			sw->WriteLine("[EDGES]");
-			for each(String ^ edge in edgeLines) sw->WriteLine(edge);
+			for each (String ^ edge in edgeLines) sw->WriteLine(edge);
 			sw->Close();
 			return true;
 		}
-		catch (Exception^) { return false; }
+		catch (Exception^ ex) {
+			MessageBox::Show("Save to TXT failed: " + ex->Message, "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			return false;
+		}
 	}
 	static bool LoadFromTXT(String^ filePath, List<String^>^% vertexLines, List<String^>^% edgeLines) {
 		try {
@@ -40,7 +44,10 @@ public:
 			sr->Close();
 			return true;
 		}
-		catch (Exception^) { return false; }
+		catch (Exception^ ex) {
+			MessageBox::Show("Load from TXT failed: " + ex->Message, "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			return false;
+		}
 	}
 	static bool SaveToBIN(String^ filePath, List<String^>^ vertexData, List<String^>^ edgeData) {
 		try {
@@ -72,7 +79,10 @@ public:
 			Marshal::FreeHGlobal(p);
 			return true;
 		}
-		catch (Exception^) { return false; }
+		catch (Exception^ ex) {
+			MessageBox::Show("Save to BIN failed: " + ex->Message, "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			return false;
+		}
 	}
 	static bool LoadFromBIN(String^ filePath, List<String^>^% vertexData, List<String^>^% edgeData) {
 		try {
@@ -110,7 +120,10 @@ public:
 			Marshal::FreeHGlobal(p);
 			return true;
 		}
-		catch (Exception^) { return false; }
+		catch (Exception^ ex) {
+			MessageBox::Show("Load from BIN failed: " + ex->Message, "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			return false;
+		}
 	}
 
 	static bool SaveToDOCX(String^ filePath, List<String^>^ vertexLines, List<String^>^ edgeLines) {
@@ -135,7 +148,7 @@ public:
 			p->Range->Font->Bold = 0;
 			p->Range->Font->Size = 12;
 			p->Range->InsertParagraphAfter();
-			for each(String ^ v in vertexLines) {
+			for each (String ^ v in vertexLines) {
 				p = doc->Content->Paragraphs->Add(t);
 				p->Range->Text = v;
 				p->Range->Font->Size = 12;
@@ -147,7 +160,7 @@ public:
 			p->Range->Font->Bold = 0;
 			p->Range->Font->Size = 12;
 			p->Range->InsertParagraphAfter();
-			for each(String ^ e in edgeLines) {
+			for each (String ^ e in edgeLines) {
 				p = doc->Content->Paragraphs->Add(t);
 				p->Range->Text = e;
 				p->Range->Font->Size = 12;
@@ -159,7 +172,8 @@ public:
 			doc->SaveAs(filename, t, t, t, t, t, t, t, t, t, t, t, t, t, t, t);
 			return true;
 		}
-		catch (Exception^) {
+		catch (Exception^ ex) {
+			MessageBox::Show("Save to DOCX failed: " + ex->Message, "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
 			return false;
 		}
 		finally {
@@ -194,7 +208,7 @@ public:
 			String^ selection = "";
 
 			array<wchar_t>^ separators = gcnew array<wchar_t>{ '\n', '\r' };
-			for each(String ^ raw in fullText->Split(separators, StringSplitOptions::RemoveEmptyEntries)) {
+			for each (String ^ raw in fullText->Split(separators, StringSplitOptions::RemoveEmptyEntries)) {
 				String^ line = raw->Trim();
 				if (line == "Graph Data" || line == "") continue;
 				else if (line == "[VERTICES]") { selection = "V"; }
@@ -204,7 +218,8 @@ public:
 			}
 			return true;
 		}
-		catch (Exception^) {
+		catch (Exception^ ex) {
+			MessageBox::Show("Load from DOCX failed: " + ex->Message, "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
 			return false;
 		}
 		finally {

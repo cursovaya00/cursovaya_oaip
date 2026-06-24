@@ -2,6 +2,7 @@
 using namespace System;
 using namespace System::IO;
 using namespace System::Collections::Generic;
+using namespace System::Windows::Forms;
 
 public ref class User {
 public:
@@ -33,24 +34,40 @@ public:
 			users->Add(def_user);
 		}
 		else {
-			StreamReader^ sr = gcnew StreamReader("users.dat");
-			while (sr->Peek() >= 0) {
-				String^ line = sr->ReadLine();
-				array<String^>^ part = line->Split(':');
-				User^ u = gcnew  User();
-				u->Username = part[0];
-				u->Password = part[1];
-				users->Add(u);
+			try {
+				StreamReader^ sr = gcnew StreamReader("users.dat");
+				while (sr->Peek() >= 0) {
+					String^ line = sr->ReadLine();
+					array<String^>^ part = line->Split(':');
+					if (part->Length >= 2) {
+						User^ u = gcnew User();
+						u->Username = part[0];
+						u->Password = part[1];
+						users->Add(u);
+					}
+				}
+				sr->Close();
 			}
-			sr->Close();
+			catch (Exception^ ex) {
+				MessageBox::Show("Failed to load users: " + ex->Message, "Error", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+				User^ admin = gcnew User();
+				admin->Username = "admin";
+				admin->Password = "admin";
+				users->Add(admin);
+			}
 		}
 	};
 	static void SaveUsers() {
-		StreamWriter^ sw = gcnew StreamWriter("users.dat");
-		for (int i = 0;i < users->Count;i++) {
-			sw->WriteLine(users[i]->Username + ":" + users[i]->Password);
+		try {
+			StreamWriter^ sw = gcnew StreamWriter("users.dat");
+			for (int i = 0;i < users->Count;i++) {
+				sw->WriteLine(users[i]->Username + ":" + users[i]->Password);
+			}
+			sw->Close();
 		}
-		sw->Close();
+		catch (Exception^ ex) {
+			MessageBox::Show("Failed to save users: " + ex->Message, "Error", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		}
 	}
 	static bool Login(String^ username, String^ password) {
 		for (int i = 0;i < users->Count;i++) {

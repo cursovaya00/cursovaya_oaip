@@ -121,106 +121,106 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="miSaveTxt.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="toolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
     <value>180, 22</value>
   </data>
-  <data name="miSaveTxt.Text" xml:space="preserve">
+  <data name="toolStripMenuItem2.Text" xml:space="preserve">
     <value>Save as TXT</value>
   </data>
-  <data name="miSaveBin.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="toolStripMenuItem3.Size" type="System.Drawing.Size, System.Drawing">
     <value>180, 22</value>
   </data>
-  <data name="miSaveBin.Text" xml:space="preserve">
+  <data name="toolStripMenuItem3.Text" xml:space="preserve">
     <value>Save as BIN</value>
   </data>
-  <data name="miSaveDocx.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="toolStripMenuItem4.Size" type="System.Drawing.Size, System.Drawing">
     <value>180, 22</value>
   </data>
-  <data name="miSaveDocx.Text" xml:space="preserve">
+  <data name="toolStripMenuItem4.Text" xml:space="preserve">
     <value>Save as DOCX</value>
   </data>
-  <data name="miLoadTxt.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="toolStripMenuItem5.Size" type="System.Drawing.Size, System.Drawing">
     <value>180, 22</value>
   </data>
-  <data name="miLoadTxt.Text" xml:space="preserve">
+  <data name="toolStripMenuItem5.Text" xml:space="preserve">
     <value>Load from TXT</value>
   </data>
-  <data name="miLoadBin.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="toolStripMenuItem6.Size" type="System.Drawing.Size, System.Drawing">
     <value>180, 22</value>
   </data>
-  <data name="miLoadBin.Text" xml:space="preserve">
+  <data name="toolStripMenuItem6.Text" xml:space="preserve">
     <value>Load from BIN</value>
   </data>
-  <data name="miLoadDocx.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="toolStripMenuItem7.Size" type="System.Drawing.Size, System.Drawing">
     <value>180, 22</value>
   </data>
-  <data name="miLoadDocx.Text" xml:space="preserve">
+  <data name="toolStripMenuItem7.Text" xml:space="preserve">
     <value>Load from DOCX</value>
   </data>
-  <data name="miFile.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
     <value>37, 20</value>
   </data>
-  <data name="miFile.Text" xml:space="preserve">
+  <data name="toolStripMenuItem1.Text" xml:space="preserve">
     <value>File</value>
   </data>
-  <data name="miLangRu.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="toolStripMenuItem9.Size" type="System.Drawing.Size, System.Drawing">
     <value>128, 22</value>
   </data>
-  <data name="miLangRu.Text" xml:space="preserve">
+  <data name="toolStripMenuItem9.Text" xml:space="preserve">
     <value>Russian</value>
   </data>
-  <data name="miLangEn.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="toolStripMenuItem10.Size" type="System.Drawing.Size, System.Drawing">
     <value>128, 22</value>
   </data>
-  <data name="miLangEn.Text" xml:space="preserve">
+  <data name="toolStripMenuItem10.Text" xml:space="preserve">
     <value>English</value>
   </data>
-  <data name="miLangBe.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="toolStripMenuItem11.Size" type="System.Drawing.Size, System.Drawing">
     <value>128, 22</value>
   </data>
-  <data name="miLangBe.Text" xml:space="preserve">
+  <data name="toolStripMenuItem11.Text" xml:space="preserve">
     <value>Belarusian</value>
   </data>
-  <data name="miLanguage.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="toolStripMenuItem8.Size" type="System.Drawing.Size, System.Drawing">
     <value>71, 20</value>
   </data>
-  <data name="miLanguage.Text" xml:space="preserve">
+  <data name="toolStripMenuItem8.Text" xml:space="preserve">
     <value>Language</value>
   </data>
-  <data name="miColor1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="toolStripMenuItem13.Size" type="System.Drawing.Size, System.Drawing">
     <value>138, 22</value>
   </data>
-  <data name="miColor1.Text" xml:space="preserve">
+  <data name="toolStripMenuItem13.Text" xml:space="preserve">
     <value>Light theme</value>
   </data>
-  <data name="miColor2.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="toolStripMenuItem14.Size" type="System.Drawing.Size, System.Drawing">
     <value>138, 22</value>
   </data>
-  <data name="miColor2.Text" xml:space="preserve">
+  <data name="toolStripMenuItem14.Text" xml:space="preserve">
     <value>Dark theme</value>
   </data>
-  <data name="miColor3.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="toolStripMenuItem15.Size" type="System.Drawing.Size, System.Drawing">
     <value>138, 22</value>
   </data>
-  <data name="miColor3.Text" xml:space="preserve">
+  <data name="toolStripMenuItem15.Text" xml:space="preserve">
     <value>Blue theme</value>
   </data>
-  <data name="miView.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="toolStripMenuItem12.Size" type="System.Drawing.Size, System.Drawing">
     <value>44, 20</value>
   </data>
-  <data name="miView.Text" xml:space="preserve">
+  <data name="toolStripMenuItem12.Text" xml:space="preserve">
     <value>View</value>
   </data>
-  <data name="miAbout.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="toolStripMenuItem17.Size" type="System.Drawing.Size, System.Drawing">
     <value>107, 22</value>
   </data>
-  <data name="miAbout.Text" xml:space="preserve">
+  <data name="toolStripMenuItem17.Text" xml:space="preserve">
     <value>About</value>
   </data>
-  <data name="miHelp.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="toolStripMenuItem16.Size" type="System.Drawing.Size, System.Drawing">
     <value>44, 20</value>
   </data>
-  <data name="miHelp.Text" xml:space="preserve">
+  <data name="toolStripMenuItem16.Text" xml:space="preserve">
     <value>Help</value>
   </data>
   <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
@@ -738,106 +738,106 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Анализ графа</value>
   </data>
-  <data name="&gt;&gt;miFile.Name" xml:space="preserve">
-    <value>miFile</value>
+  <data name="&gt;&gt;toolStripMenuItem1.Name" xml:space="preserve">
+    <value>toolStripMenuItem1</value>
   </data>
-  <data name="&gt;&gt;miFile.Type" xml:space="preserve">
+  <data name="&gt;&gt;toolStripMenuItem1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;miSaveTxt.Name" xml:space="preserve">
-    <value>miSaveTxt</value>
+  <data name="&gt;&gt;toolStripMenuItem2.Name" xml:space="preserve">
+    <value>toolStripMenuItem2</value>
   </data>
-  <data name="&gt;&gt;miSaveTxt.Type" xml:space="preserve">
+  <data name="&gt;&gt;toolStripMenuItem2.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;miSaveBin.Name" xml:space="preserve">
-    <value>miSaveBin</value>
+  <data name="&gt;&gt;toolStripMenuItem3.Name" xml:space="preserve">
+    <value>toolStripMenuItem3</value>
   </data>
-  <data name="&gt;&gt;miSaveBin.Type" xml:space="preserve">
+  <data name="&gt;&gt;toolStripMenuItem3.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;miSaveDocx.Name" xml:space="preserve">
-    <value>miSaveDocx</value>
+  <data name="&gt;&gt;toolStripMenuItem4.Name" xml:space="preserve">
+    <value>toolStripMenuItem4</value>
   </data>
-  <data name="&gt;&gt;miSaveDocx.Type" xml:space="preserve">
+  <data name="&gt;&gt;toolStripMenuItem4.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;miLoadTxt.Name" xml:space="preserve">
-    <value>miLoadTxt</value>
+  <data name="&gt;&gt;toolStripMenuItem5.Name" xml:space="preserve">
+    <value>toolStripMenuItem5</value>
   </data>
-  <data name="&gt;&gt;miLoadTxt.Type" xml:space="preserve">
+  <data name="&gt;&gt;toolStripMenuItem5.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;miLoadBin.Name" xml:space="preserve">
-    <value>miLoadBin</value>
+  <data name="&gt;&gt;toolStripMenuItem6.Name" xml:space="preserve">
+    <value>toolStripMenuItem6</value>
   </data>
-  <data name="&gt;&gt;miLoadBin.Type" xml:space="preserve">
+  <data name="&gt;&gt;toolStripMenuItem6.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;miLoadDocx.Name" xml:space="preserve">
-    <value>miLoadDocx</value>
+  <data name="&gt;&gt;toolStripMenuItem7.Name" xml:space="preserve">
+    <value>toolStripMenuItem7</value>
   </data>
-  <data name="&gt;&gt;miLoadDocx.Type" xml:space="preserve">
+  <data name="&gt;&gt;toolStripMenuItem7.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;miLanguage.Name" xml:space="preserve">
-    <value>miLanguage</value>
+  <data name="&gt;&gt;toolStripMenuItem8.Name" xml:space="preserve">
+    <value>toolStripMenuItem8</value>
   </data>
-  <data name="&gt;&gt;miLanguage.Type" xml:space="preserve">
+  <data name="&gt;&gt;toolStripMenuItem8.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;miLangRu.Name" xml:space="preserve">
-    <value>miLangRu</value>
+  <data name="&gt;&gt;toolStripMenuItem9.Name" xml:space="preserve">
+    <value>toolStripMenuItem9</value>
   </data>
-  <data name="&gt;&gt;miLangRu.Type" xml:space="preserve">
+  <data name="&gt;&gt;toolStripMenuItem9.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;miLangEn.Name" xml:space="preserve">
-    <value>miLangEn</value>
+  <data name="&gt;&gt;toolStripMenuItem10.Name" xml:space="preserve">
+    <value>toolStripMenuItem10</value>
   </data>
-  <data name="&gt;&gt;miLangEn.Type" xml:space="preserve">
+  <data name="&gt;&gt;toolStripMenuItem10.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;miLangBe.Name" xml:space="preserve">
-    <value>miLangBe</value>
+  <data name="&gt;&gt;toolStripMenuItem11.Name" xml:space="preserve">
+    <value>toolStripMenuItem11</value>
   </data>
-  <data name="&gt;&gt;miLangBe.Type" xml:space="preserve">
+  <data name="&gt;&gt;toolStripMenuItem11.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;miView.Name" xml:space="preserve">
-    <value>miView</value>
+  <data name="&gt;&gt;toolStripMenuItem12.Name" xml:space="preserve">
+    <value>toolStripMenuItem12</value>
   </data>
-  <data name="&gt;&gt;miView.Type" xml:space="preserve">
+  <data name="&gt;&gt;toolStripMenuItem12.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;miColor1.Name" xml:space="preserve">
-    <value>miColor1</value>
+  <data name="&gt;&gt;toolStripMenuItem13.Name" xml:space="preserve">
+    <value>toolStripMenuItem13</value>
   </data>
-  <data name="&gt;&gt;miColor1.Type" xml:space="preserve">
+  <data name="&gt;&gt;toolStripMenuItem13.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;miColor2.Name" xml:space="preserve">
-    <value>miColor2</value>
+  <data name="&gt;&gt;toolStripMenuItem14.Name" xml:space="preserve">
+    <value>toolStripMenuItem14</value>
   </data>
-  <data name="&gt;&gt;miColor2.Type" xml:space="preserve">
+  <data name="&gt;&gt;toolStripMenuItem14.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;miColor3.Name" xml:space="preserve">
-    <value>miColor3</value>
+  <data name="&gt;&gt;toolStripMenuItem15.Name" xml:space="preserve">
+    <value>toolStripMenuItem15</value>
   </data>
-  <data name="&gt;&gt;miColor3.Type" xml:space="preserve">
+  <data name="&gt;&gt;toolStripMenuItem15.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;miHelp.Name" xml:space="preserve">
-    <value>miHelp</value>
+  <data name="&gt;&gt;toolStripMenuItem16.Name" xml:space="preserve">
+    <value>toolStripMenuItem16</value>
   </data>
-  <data name="&gt;&gt;miHelp.Type" xml:space="preserve">
+  <data name="&gt;&gt;toolStripMenuItem16.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;miAbout.Name" xml:space="preserve">
-    <value>miAbout</value>
+  <data name="&gt;&gt;toolStripMenuItem17.Name" xml:space="preserve">
+    <value>toolStripMenuItem17</value>
   </data>
-  <data name="&gt;&gt;miAbout.Type" xml:space="preserve">
+  <data name="&gt;&gt;toolStripMenuItem17.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
